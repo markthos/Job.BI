@@ -3,7 +3,7 @@ var user = {
     name: 'Mama Mo',
     email: 'monique.merzoug@icloud.com',
     interests: ['Web Development', 'Visual Merchandising'],
-    notifications: ['1: Goal 1', '2: Goal 2'],
+    myCourses: ['1: Course 1', '2: Course 2'],
 };
 
 // Save user data to local storage
@@ -19,11 +19,12 @@ function displayUser(user) {
         <p>Name: ${user.name}</p>
         <p>Email: ${user.email}</p>
         <p>Interests: ${user.interests.join(', ')}</p>
+        
     `;
 
     document.querySelector('#messages').innerHTML = `
-        <h3>Career Goals</h3>
-        ${user.notifications.map(notification => `<p>${notification}</p>`).join('')}
+        <h3>My Courses</h3>
+        ${user.myCourses.map(notification => `<p>${notification}</p>`).join('')}
     `;
 }
 
