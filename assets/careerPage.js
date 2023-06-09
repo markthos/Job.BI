@@ -28,36 +28,38 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable"; // Add the "enable" class to the current dot
 }
 
-// Mock course data
-var courses = [
-  { title: 'Web Development for Beginners', platform: 'Coursera', description: 'An introductory course on web development.' },
-  { title: 'Data Science: Foundations', platform: 'Udemy', description: 'A comprehensive introduction to data science.' },
-  // Add more courses as needed...
+// Mock career data
+var careers = [
+  { title: 'Web Developer', platform: 'LinkedIn', description: 'Apprenticeship Job Opportunity.' },
+  { title: 'Data Scientist', platform: 'Glassdoor', description: 'Data Scientist.' },
+  // Add more careers as needed...
 ];
 
-// Function to display courses
-function displayCourses(courses) {
-  var courseList = document.getElementById('course-info'); // Get the course list element
-  courseList.innerHTML = '';
+// Function to display careers
+function displayCareers(careers) {
+  var careerList = document.getElementById("job-info"); // Get the career list element
+  careerList.innerHTML = '';
 
-  courses.forEach(course => {
-      var courseItem = document.createElement('div'); // Create a new div for each course
-      courseItem.classList.add('course-item'); // Add the "course-item" class to the div
-      courseItem.innerHTML = `
-          <h3>${course.title}</h3>
-          <p><strong>Platform:</strong> ${course.platform}</p>
-          <p><strong>Description:</strong> ${course.description}</p>
-      `; // Add the course information to the div
-      courseList.appendChild(courseItem); // Add the div to the course list
+  careers.forEach(career => {
+      var careerInfo = document.createElement('div'); // Create a new div for each job
+      careerInfo.classList.add("job-info"); // Add the "job-info" class to the div
+      careerInfo.innerHTML = `
+          <h3>${career.title}</h3>
+          <p><strong>Platform:</strong> ${career.platform}</p>
+          <p><strong>Description:</strong> ${career.description}</p>
+      `; // Add the job information to the div
+      careerList.appendChild(careerInfo); // Add the div to the career list
   });
 }
 
-// Initial display of courses
-displayCourses(courses);
+console.log(displayCareers);
+// Initial display of careers
+displayCareers(careers);
 
-// Function to search courses
-function searchCourses() {
-  var searchInput = document.getElementById('searchInput').value.toLowerCase(); // Get the search input and convert it to lower case
-  var filteredCourses = courses.filter(course => course.title.toLowerCase().includes(searchInput)); // Filter the courses based on the search input
-  displayCourses(filteredCourses); // Display the filtered courses
-}
+// Function to search jobs
+function searchCareers() {
+    var searchInput = document.getElementById('searchInput').value.toLowerCase(); // Get the search input and convert it to lower case
+    var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
+    displayCareers(filteredCareers); // Display the filtered careers
+  }
+  
