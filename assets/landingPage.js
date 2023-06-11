@@ -1,32 +1,40 @@
-const popupContainer = document.getElementById("popup-container");
-const loginButton = document.getElementById("login")
-const signupButton = document.getElementById("signup")
+document.addEventListener("DOMContentLoaded", function() {
+    const loginLink = document.getElementById("login");
+    const signupLink = document.getElementById("signup");
+    const loginForm = document.querySelector(".form-box.login");
+    const signupForm = document.querySelector(".form-box.signup");
+  
+    loginForm.style.display = "none";
+    signupForm.style.display = "none"; 
 
-loginButton.addEventListener("click", showLoginPopup);
-signupButton.addEventListener("click", showSignupPopup);
-
-function showLoginPopup(event) {
-    event.preventDefault();
-    popupContainer.style.display = "block";
-    document.getElementById("login-popup").style.display = "block";
-    document.getElementById("signup-popup").style.display = "none";
-
-}
-
-function showSignupPopup(event) {
-    event.preventDefault();
-    popupContainer.style.display = "block";
-    document.getElementById("login-popup").style.display = "none";
-    document.getElementById("signup-popup").style.display = "block";
-
-}
-
-const closeButton = document.getElementById("close-button");
-const overlay = document.getElementById("overlay");
-
-closeButton.addEventListener("click", closePopup);
-overlay.addEventListener("click", closePopup);
-
-function closePopup() {
-    popupContainer.style.display = "none";
-}
+    loginLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
+    });
+  
+    signupLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      loginForm.style.display = "none";
+      signupForm.style.display = "block";
+    });
+  });
+  
+  // Save password to local storage
+function savePassword(password) {
+    localStorage.setItem("password", password);
+  }
+  
+  // Retrieve password from local storage
+  function getPassword() {
+    return localStorage.getItem("password");
+  }
+  
+  // Example usage
+  const password = "mySecretPassword";
+  savePassword(password);
+  
+  // Retrieve the saved password
+  const savedPassword = getPassword();
+  console.log(savedPassword); // Output: mySecretPassword
+  
