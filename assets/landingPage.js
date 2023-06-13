@@ -20,22 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       signupForm.style.display = "block";
     });
   });
-  
-  // Save password to local storage
-function savePassword(password) {
-    localStorage.setItem("password", password);
-  }
-  
-  // Retrieve password from local storage
-  function getPassword() {
-    return localStorage.getItem("password");
-  }
-  
-  // Example usage
-  const password = "mySecretPassword";
-  savePassword(password);
-  
-  // Retrieve the saved password
-  const savedPassword = getPassword();
-  console.log(savedPassword); // Output: mySecretPassword
-  
+
+
+
+
