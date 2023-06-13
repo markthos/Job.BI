@@ -63,3 +63,55 @@ function searchCareers() {
     displayCareers(filteredCareers); // Display the filtered careers
   }
   
+//Make the API request and update the job info
+
+fetch('https://api.jobs2careers.com/api/search.php?id=273&pass=HkdyhY4qQUmJXi5p&ip=...&q=...&l=...&link=1')
+.then (response => response.json())
+.then(data => {
+
+  //Get the job info container element
+  var jobInfoContainer = document.getElementById("job-info");
+
+  //clear the placeholder content
+  jobInfoContainer.innerHTML = "";
+
+  //Process the API response data and update the HTML
+data.forEach(job => {
+  var jobItem = document.createElement("div");
+  jobItem.classList.add('job-item');
+  jobItem.innerHTML = `
+  <h3>${job.title}</h3>
+  <p>${job.description}</p>
+  <p>${job.location}</p>
+  <a href= "${job.applyLink}">Apply Now</a>
+  `;
+  jobInfoContainer.appendChild(jobItem);
+});
+})
+.catch(error => {
+  console.error('Error',error);
+});
+
+//Fetch the industries from the Jobs2Careers API
+fetch('https://rapidapi.com/jaypat87/api/indeed11?id=273&pass=HkdyhY4qQUmJXi5p')
+.then(response => response.json())
+.then(data => {
+  var industryFIlter = document.getElementById("industryFilter");
+
+  //run through the industries and create options for the dropdown
+  data.forEach(industry => {
+    var option = document.createElement ("option");
+    option.value = industry;
+  option.text = industry;
+  industryFilter.appendChild(option);
+  });
+})
+.catch(error => {
+  console.error('Error', error);
+});
+
+console.log(displayCareers);
+
+// https://rapidapi.com/jaypat87/api/indeed11
+// linkedin-jobs-search.p.rapidapi.com
+//031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2
