@@ -26,9 +26,11 @@
                     <li>
                         <a href="#log-in" class="btn" id="login">Log In</a>
                     </li>
+                    <li>
                     <button>
                         <a href="sign-up" class="btn" id="signup">Sign Up</a>
                     </button>
+                    </li>
 
                     <div id="popup-container"> </div>
                     <div id="login-popup" class="popup"></div>
@@ -52,17 +54,18 @@
 <div class="form-container">
     <div class="form-box login">
       <h2>Login</h2>
-    <form action="#log-in">
+    <form>
         <div class="input-box">
-          <span class="icon"><ion-icon name="person"></ion-icon></span>
-          <input type="text" name="username" placeholder="Username" required>
-          <label>Username</label>
+            <div class="input-field">
+                <i class="icon"><ion-icon name="person"></ion-icon></i>
+                <input type="text" placeholder="Username" required>
+            </div>
         </div>
         <div class="input-box">
-          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" name="password" placeholder="Password" required>
-          <label>Password</label>
-        </div>
+            <div class="input-field"></div>
+                <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                <input type="password" placeholder="Password" required>
+            </div>
         <div class="remember-forgot">
           <label><input type="checkbox"> Remember me</label>
           <a href="#">Forgot Password?</a>
@@ -70,7 +73,7 @@
         <button type="submit" class="btn" id="loginBtn">Login</button>
     </form>
       <div class="login-register">
-        <p>Don't have an account? <a href="#" class="signup-link" id="signup">Signup</a></p>
+        <p>Don't have an account? <a href="#signup" class="signup-link" id="signup">Signup</a></p>
       </div>
     </div>
 </div>
@@ -78,21 +81,21 @@
 <div class="form-container">
     <div class="form-box signup">
       <h2>Signup</h2>
-    <form action="#signup">
+    <form>
         <div class="input-box">
-          <span class="icon"><ion-icon name="person"></ion-icon>
-          <input type="text" name=username placeholder="Enter your username" required>
-          <label>Username</label>
-        </div>
+           <div class="input-field">
+              <i class="icon"><ion-icon name="person"></ion-icon></i>
+              <input type="text" placeholder="Enter your username" required>
+          </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" name=password placeholder="Create Password" required>
+          <input type="password" placeholder="Create Password" required>
           <label>Password</label>
         </div>
         <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" name=confirmPassword placeholder="Confirm Password" required>
-            <label>Confirm Password</label>
+            <div class="input-field">
+              <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+              <input type="password" placeholder="Confirm Password" required>
         </div>
     </form>
       <div class="login-register">
@@ -107,12 +110,28 @@
     <div class="icon-bar">
         <a href="#header"><i class="fa fa-home"></i></a>
         <a href="#contact-me"><i class="fa fa-handshake-o"></i></a>
-        <a href="mailto:monique.merzoug1@gmail.com"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:mailto:job.bicontact@gmail.com"><i class="fa fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/monique-merzoug"><i class="fa fa-linkedin"></i></a>
         <a href="https://www.instagram.com/sneekymoniquey/"><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/MMerzoug?tab=repositories"><i class="fa fa-github"></i></a>
     </div>
 </footer>
+
+<script>
+    let signupBtn = document.getElementById("signupBtn")
+    let loginBtn = document.getElementById("loginBtn")
+    
+    signupBtn.onclick = function() {
+        signupBtn.classList.add("disable");
+        loginBtn.classList.remove("disable");
+    }
+    
+   loginBtn.onclick = function() {
+        loginBtn.classList.add("disable");
+        signupBtn.classList.remove("disable");
+    }
+</script>
+
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
