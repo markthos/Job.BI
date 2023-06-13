@@ -7,6 +7,19 @@ function loadGoals() {
     return goals;
 }
 
+
+  var video = document.querySelector('video');
+  var progressBar = document.querySelector('.progress-bar');
+  var progressText = document.querySelector('.progress-text');
+  video.addEventListener('timeupdate', function() {
+    var progress = video.currentTime / video.duration;
+    progressBar.style.width = progress * 100 + '%';
+    progressText.innerHTML = Math.round(progress * 100) + '% Complete';
+  });
+
+
+
+
 // Function to save goals to local storage
 function saveGoals(goals) {
     localStorage.setItem('goals', JSON.stringify(goals));
