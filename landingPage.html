@@ -35,7 +35,16 @@
             </nav>
         </box>
     
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              var signupBtn = document.getElementById('signupBtn');
+        
+              signupBtn.addEventListener('click', function() {
+                // Redirect to the desired page
+                window.location.href = "file:///Users/lak-veh/bootcamp/Job.BI/profilePage.html";
+              });
+            });
+          </script>
       
  <section class="content">
     <h1>Job.BI don't just bee</h1>
@@ -48,8 +57,8 @@
  </section>
 
  <div class="form-container">
-    <div class="form-box login">  
-        <form >
+    <div class="form-box login ">  
+        <form class= "form" id="login">
            <h2>Login</h2>
             <div class="input-box" id="login-form">
                 <div class="input-field">
@@ -70,14 +79,14 @@
             <button type="submit" class="btn" id="loginBtn">Login</button>
         </form>
         <div class="login-register">
-            <p>Don't have an account? <a href="signup-form" class="signup-link" id="signupLink">Signup</a></p>
+            <p>Don't have an account? <a href="" class="signup-link" id="signupLink">Signup</a></p>
         </div>
     </div>
 
  <div class="form-container">
     <div class="form-box signup">
         <h2>Signup</h2>
-        <form>
+        <form class="form" id="signup">
             <div class="input-box" id="login-form">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
@@ -90,7 +99,7 @@
                     <input type="password" placeholder="Create Password" id="passwordInput" required>
                 </div>
             </div>
-            <div class="input-box">
+            <div class="input-box" id="input-text">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
                     <input type="password" placeholder="Confirm Password" id="passwordInput" required>
@@ -98,7 +107,6 @@
             </div>
             <div class="login-register">
                 <input type="submit" class="btn" id="signupBtn"></input>
-                <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
             </div>
         </form>
     </div>
