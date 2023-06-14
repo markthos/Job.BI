@@ -28,13 +28,6 @@ function SlideShow(n) {
   circles[slidePosition - 1].className += " enable"; // Add the "enable" class to the current dot
 }
 
-// // Mock career data
-// var careers = [
-//   { title: 'Web Developer', platform: 'LinkedIn', description: 'Apprenticeship Job Opportunity.' },
-//   { title: 'Data Scientist', platform: 'Glassdoor', description: 'Data Scientist.' },
-//   // Add more careers as needed...
-// ];
-
 //function to display careers from the careerPageResources file
 function displayCareers(response) {
   var careerList = document.getElementById("job-info"); // Get the career list element
@@ -56,20 +49,6 @@ function displayCareers(response) {
   }
 }
 
-
-
-// }(career => {
-//     var careerInfo = document.createElement('div'); // Create a new div for each job
-//     careerInfo.classList.add("job-info"); // Add the "job-info" class to the div
-//     careerInfo.innerHTML = `
-//         <h3>${career.job_name}</h3>
-//         <p><strong>Company:</strong> ${career.company_name}</p>
-//         <p><strong>Job Link:</strong> ${career.job_url}</p>
-//     `; // Add the job information to the div
-//     careerList.appendChild(careerInfo); // Add the div to the career list
-// });
-
-
 // Initial display of careers
 displayCareers(response);
 
@@ -79,7 +58,6 @@ function searchCareers() {
   // var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
   // displayCareers(filteredCareers); // Display the filtered careers
   fetchJobs(searchInput);
-  
 
 }
 
@@ -117,8 +95,6 @@ function fetchJobs() {
   //     });
   displayCareers(response);
 }
-
-console.log (response);
 
 // Call fetchJobs function when page loads
 window.onload = fetchJobs;
