@@ -99,28 +99,6 @@
             <div class="login-register">
                 <input type="submit" class="btn" id="signupBtn"></input>
                 <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
-
-                <script>
-                    // Get the signup link and form elements
-                    const signupLink = document.getElementById('signupLink');
-                    const signupForm = document.getElementById('signupForm');
-                
-                    // Add event listener to the signup link
-                    signupLink.addEventListener('click', function(event) {
-                      event.preventDefault(); // Prevent default link behavior
-                      signupForm.style.display = 'block'; // Show the signup form
-                    });
-                
-                    // Add event listener to the signup form submission
-                    signupForm.addEventListener('submit', function(event) {
-                      event.preventDefault(); // Prevent form submission
-                      const username = document.getElementById('username').value;
-                      const password = document.getElementById('password').value;
-                      // Here, you can handle the form submission, e.g., send the data to a server for processing
-                      console.log('Username:', username);
-                      console.log('Password:', password);
-                    });
-                  </script>
             </div>
         </form>
     </div>
