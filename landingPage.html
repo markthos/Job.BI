@@ -31,17 +31,13 @@
                         <a href="sign-up" class="btn" id="signup">Sign Up</a>
                     </button>
                     </li>
-
-                    <div id="popup-container"> </div>
-                    <div id="login-popup" class="popup"></div>
-                    <div id="signup-popup" class="popup">
-                    </div>
                 </ul>
             </nav>
         </box>
     
-</header>
-<section class="content">
+
+      
+ <section class="content">
     <h1>Job.BI don't just bee</h1>
     <p>
         A one-stop platform to begin the career you've always dreamed of.
@@ -49,61 +45,64 @@
     <button>
         <a href="explore" class="btn">Explore</a>
     </button>
-</section>
+ </section>
 
-<div class="form-container">
-    <div class="form-box login">
-      <h2>Login</h2>
-    <form>
-        <div class="input-box">
-            <div class="input-field">
-                <i class="icon"><ion-icon name="person"></ion-icon></i>
-                <input type="text" placeholder="Username" required>
+ <div class="form-container">
+    <div class="form-box login">  
+       <h2>Login</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="name" placeholder="Username" id="usernameInput" required>
+                </div>
             </div>
-        </div>
-        <div class="input-box">
-            <div class="input-field"></div>
-                <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                <input type="password" placeholder="Password" required>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Password" id="passwordInput" required>
+                </div>
             </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox"> Remember me</label>
-          <a href="#">Forgot Password?</a>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="loginBtn">Login</button>
+        </form>
+        <div class="login-register">
+            <p>Don't have an account? <a href="#" class="signup-link" id="signupLink">Signup</a></p>
         </div>
-        <button type="submit" class="btn" id="loginBtn">Login</button>
-    </form>
-      <div class="login-register">
-        <p>Don't have an account? <a href="#signup" class="signup-link" id="signup">Signup</a></p>
-      </div>
+    </div>
+
+ <div class="form-container">
+    <div class="form-box signup">
+        <h2>Signup</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="text" placeholder="Enter your username" id="usernameInput">
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Create Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Confirm Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="login-register">
+                <input type="submit" class="btn" id="signupBtn"></input>
+                <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
+            </div>
+        </form>
     </div>
 </div>
-
-<div class="form-container">
-    <div class="form-box signup">
-      <h2>Signup</h2>
-    <form>
-        <div class="input-box">
-           <div class="input-field">
-              <i class="icon"><ion-icon name="person"></ion-icon></i>
-              <input type="text" placeholder="Enter your username" required>
-          </div>
-        <div class="input-box">
-          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" placeholder="Create Password" required>
-          <label>Password</label>
-        </div>
-        <div class="input-box">
-            <div class="input-field">
-              <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-              <input type="password" placeholder="Confirm Password" required>
-        </div>
-    </form>
-      <div class="login-register">
-        <button type="submit" class="btn" id="signupBtn">Signup</button>
-        <p>Already have an account? <a href="#" class="login-link" id="login">Login</a></p>
-      </div>
-    </div>
-</div>   
 
    <!--Icon Bar-->
    <footer>
@@ -117,21 +116,6 @@
         <a href="https://github.com/MMerzoug?tab=repositories"><i class="fa fa-github"></i></a>
     </div>
 </footer>
-
-<script>
-    let signupBtn = document.getElementById("signupBtn")
-    let loginBtn = document.getElementById("loginBtn")
-    
-    signupBtn.onclick = function() {
-        signupBtn.classList.add("disable");
-        loginBtn.classList.remove("disable");
-    }
-    
-   loginBtn.onclick = function() {
-        loginBtn.classList.add("disable");
-        signupBtn.classList.remove("disable");
-    }
-</script>
 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
