@@ -14,104 +14,89 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   var i;
-  var slides = document.getElementsByClassName("Containers"); // Get all slides
+  var slides = document.getElementsByClassName("containers"); // Get all slides
   var circles = document.getElementsByClassName("dots"); // Get all dots
-  if (n > slides.length) {slidePosition = 1} // If the current slide number is greater than the total number of slides, reset it to 1
-  if (n < 1) {slidePosition = slides.length} // If the current slide number is less than 1, set it to the total number of slides
+  if (n > slides.length) { slidePosition = 1 } // If the current slide number is greater than the total number of slides, reset it to 1
+  if (n < 1) { slidePosition = slides.length } // If the current slide number is less than 1, set it to the total number of slides
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; // Hide all slides
+    slides[i].style.display = "none"; // Hide all slides
   }
   for (i = 0; i < circles.length; i++) {
-      circles[i].className = circles[i].className.replace(" enable", ""); // Remove the "enable" class from all dots
+    circles[i].className = circles[i].className.replace(" enable", ""); // Remove the "enable" class from all dots
   }
-  slides[slidePosition-1].style.display = "block"; // Show the current slide
-  circles[slidePosition-1].className += " enable"; // Add the "enable" class to the current dot
+  slides[slidePosition - 1].style.display = "block"; // Show the current slide
+  circles[slidePosition - 1].className += " enable"; // Add the "enable" class to the current dot
 }
 
-// Mock career data
-var careers = [
-  { title: 'Web Developer', platform: 'LinkedIn', description: 'Apprenticeship Job Opportunity.' },
-  { title: 'Data Scientist', platform: 'Glassdoor', description: 'Data Scientist.' },
-  // Add more careers as needed...
-];
-
-// Function to display careers
-function displayCareers(careers) {
+//function to display careers from the careerPageResources file
+function displayCareers(response) {
   var careerList = document.getElementById("job-info"); // Get the career list element
-  careerList.innerHTML = '';
+  careerList.innerHTML = ''; // Clear the existing content
 
-  careers.forEach(career => {
-      var careerInfo = document.createElement('div'); // Create a new div for each job
-      careerInfo.classList.add("job-info"); // Add the "job-info" class to the div
-      careerInfo.innerHTML = `
-          <h3>${career.title}</h3>
-          <p><strong>Platform:</strong> ${career.platform}</p>
-          <p><strong>Description:</strong> ${career.description}</p>
-      `; // Add the job information to the div
-      careerList.appendChild(careerInfo); // Add the div to the career list
-  });
+  for (var key in response) {
+    if (response.hasOwnProperty(key)) {
+      var job = response[key];
+      var jobItem = document.createElement("div");
+      jobItem.classList.add('job-item');
+      jobItem.innerHTML = `
+        <h3>${job.job_url}</h3>
+        <p>${job.linkedin_job_url_cleaned}</p>
+        <p>${job.company_name}</p>
+        <a href="${job.company_url}">Company Link</a>
+      `;
+      careerList.appendChild(jobItem);
+    }
+  }
 }
 
-console.log(displayCareers);
 // Initial display of careers
-displayCareers(careers);
+displayCareers(response);
 
 // Function to search jobs
 function searchCareers() {
-    var searchInput = document.getElementById('searchInput').value.toLowerCase(); // Get the search input and convert it to lower case
-    var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
-    displayCareers(filteredCareers); // Display the filtered careers
-  }
-  
-//Make the API request and update the job info
+  var searchInput = document.getElementById('searchInput').value.toLowerCase(); // Get the search input and convert it to lower case
+  // var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
+  // displayCareers(filteredCareers); // Display the filtered careers
+  fetchJobs(searchInput);
 
-fetch('https://api.jobs2careers.com/api/search.php?id=273&pass=HkdyhY4qQUmJXi5p&ip=...&q=...&l=...&link=1')
-.then (response => response.json())
-.then(data => {
+}
 
-  //Get the job info container element
-  var jobInfoContainer = document.getElementById("job-info");
+//fetch jobs from LinkedIn API through RapidAPI
+function fetchJobs() {
+  // var url = 'https://linkedin-jobs-search.p.rapidapi.com/';
+  // var options = {
+  //     method: 'POST',
+  //     headers: {
+  //         'content-type': 'application/json',
+  //         'X-RapidAPI-Key': '031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2',
+  //         'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
+  //     },
+  //     body: JSON.stringify({
+  //         search_terms: 'python programmer',
+  //         location: 'Chicago, IL',
+  //         page: '1'
+  //     })
+  // };
 
-  //clear the placeholder content
-  jobInfoContainer.innerHTML = "";
+  // fetch(url, options)
+  //     .then(response => {
+  //         if (!response.ok) {
+  //             throw new Error('Network response was not ok');
+  //         }
+  //         return response.json();
+  //     })
+  //     .then(result => {
+  //         console.log(result);
+  //         // Call displayCareers function with received data
+  //         displayCareers(result); // Assuming that result is an array of job objects
+  //     })
+  //     .catch(error => {
+  //         console.error('There has been a problem with your fetch operation:', error);
+  //     });
+  displayCareers(response);
+}
 
-  //Process the API response data and update the HTML
-data.forEach(job => {
-  var jobItem = document.createElement("div");
-  jobItem.classList.add('job-item');
-  jobItem.innerHTML = `
-  <h3>${job.title}</h3>
-  <p>${job.description}</p>
-  <p>${job.location}</p>
-  <a href= "${job.applyLink}">Apply Now</a>
-  `;
-  jobInfoContainer.appendChild(jobItem);
-});
-})
-.catch(error => {
-  console.error('Error',error);
-});
+// Call fetchJobs function when page loads
+window.onload = fetchJobs;
 
-//Fetch the industries from the Jobs2Careers API
-fetch('https://rapidapi.com/jaypat87/api/indeed11?id=273&pass=HkdyhY4qQUmJXi5p')
-.then(response => response.json())
-.then(data => {
-  var industryFIlter = document.getElementById("industryFilter");
-
-  //run through the industries and create options for the dropdown
-  data.forEach(industry => {
-    var option = document.createElement ("option");
-    option.value = industry;
-  option.text = industry;
-  industryFilter.appendChild(option);
-  });
-})
-.catch(error => {
-  console.error('Error', error);
-});
-
-console.log(displayCareers);
-
-// https://rapidapi.com/jaypat87/api/indeed11
-// linkedin-jobs-search.p.rapidapi.com
-//031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2
+//// https://linkedin-jobs-search.p.rapidapi.com/?rapidapi-key=031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2'
