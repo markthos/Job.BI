@@ -3,6 +3,30 @@ body {
   background-size: cover;
 }
 
+/* Add styles to the header container for all pages with links and buttons justified to the right*/
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.header li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
 .form-container {
     position: absolute;
     top: 50%;
