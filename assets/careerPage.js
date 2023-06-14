@@ -28,25 +28,36 @@ function SlideShow(n) {
   circles[slidePosition - 1].className += " enable"; // Add the "enable" class to the current dot
 }
 
-// Mock career data
-var careers = [
-  { title: 'Web Developer', platform: 'LinkedIn', description: 'Apprenticeship Job Opportunity.' },
-  { title: 'Data Scientist', platform: 'Glassdoor', description: 'Data Scientist.' },
-  // Add more careers as needed...
-];
+// // Mock career data
+// var careers = [
+//   { title: 'Web Developer', platform: 'LinkedIn', description: 'Apprenticeship Job Opportunity.' },
+//   { title: 'Data Scientist', platform: 'Glassdoor', description: 'Data Scientist.' },
+//   // Add more careers as needed...
+// ];
 
-// Function to display careers
-function displayCareers(careers) {
+//function to display careers from the careerPageResources file
+function displayCareers(response) {
   var careerList = document.getElementById("job-info"); // Get the career list element
-  careerList.innerHTML = '';
-  console.log(careers);
-  for (var key in careers) {
-    if (careers.hasOwnProperty.call(careers, key)) {
-      var element = careers[key];
-      // console.log(key + ":" element);
+  careerList.innerHTML = ''; // Clear the existing content
+
+  for (var key in response) {
+    if (response.hasOwnProperty(key)) {
+      var job = response[key];
+      var jobItem = document.createElement("div");
+      jobItem.classList.add('job-item');
+      jobItem.innerHTML = `
+        <h3>${job.job_url}</h3>
+        <p>${job.linkedin_job_url_cleaned}</p>
+        <p>${job.company_name}</p>
+        <a href="${job.company_url}">Company Link</a>
+      `;
+      careerList.appendChild(jobItem);
     }
   }
 }
+
+
+
 // }(career => {
 //     var careerInfo = document.createElement('div'); // Create a new div for each job
 //     careerInfo.classList.add("job-info"); // Add the "job-info" class to the div
@@ -65,8 +76,11 @@ displayCareers(response);
 // Function to search jobs
 function searchCareers() {
   var searchInput = document.getElementById('searchInput').value.toLowerCase(); // Get the search input and convert it to lower case
-  var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
-  displayCareers(filteredCareers); // Display the filtered careers
+  // var filteredCareers = careers.filter(career => career.title.toLowerCase().includes(searchInput)); // Filter the careers based on the search input
+  // displayCareers(filteredCareers); // Display the filtered careers
+  fetchJobs(searchInput);
+  
+
 }
 
 //fetch jobs from LinkedIn API through RapidAPI
@@ -101,8 +115,10 @@ function fetchJobs() {
   //     .catch(error => {
   //         console.error('There has been a problem with your fetch operation:', error);
   //     });
-  displayCareers(response)
+  displayCareers(response);
 }
+
+console.log (response);
 
 // Call fetchJobs function when page loads
 window.onload = fetchJobs;
