@@ -14,23 +14,43 @@ loginLink.addEventListener("click", function(event) {
     signupForm.style.display = "none";
   });
 
-  signupLink.addEventListener("click", function(event) {
+signupLink.addEventListener("click", function(event) {
     event.preventDefault();
     loginForm.style.display = "none";
     signupForm.style.display = "block";
   });
 
-  loginForm.addEventListener("click", function(event) {
-      event.preventDefault();
-      loginForm.style.display = "none";
-      signupForm.style.display = "block";
 
-    });
-  
-    signupForm.addEventListener("click", function(event) {
-      event.preventDefault();
-      loginForm.style.display = "block";
-      signupForm.style.display = "none";
+  // Add an event listener to the login button
+  document.getElementById("loginBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Perform login validation and other necessary checks here
+    // If login is successful, redirect the user to the profile page
+    window.location.href = "./profilePage.html";
   });
+
+  // Add an event listener to the login button
+  document.getElementById("signupBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Perform login validation and other necessary checks here
+    // If login is successful, redirect the user to the profile page
+    window.location.href = "./profilePage.html";
+  });
+
+
+//  loginForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "none";
+//       signupForm.style.display = "block";
+
+//     });
+  
+//   signupForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "block";
+//       signupForm.style.display = "none";
+//   });
 
 });
