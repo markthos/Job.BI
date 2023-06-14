@@ -33,4 +33,4 @@ document.addEventListener("DOMContentLoaded", function() {
         signupForm.style.display = "none";
 
       });
-    });
+
