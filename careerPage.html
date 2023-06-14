@@ -24,43 +24,7 @@
                         <a href="companies">Companies</a>
                     </li>
                     <section class="search-bar">
-                        <select id="searchInput" onchange="searchCareers()">
-                            <option value="">All Careers</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="Data Scientist">Data Scientist</option>
-                            <option value="UX Designer">UX Designer</option>
-                            <option value="Accountant">Accountant</option>
-                            <option value="Public Relations">Public Relations</option>
-                            <option value="Architect">Architect</option>
-                            <option value="Graphic Designer">Graphic Designer</option>
-                            <option value="Audio Engineer">Audio Engineer</option>
-                            <option value="Mortgage Broker">Mortgage Broker</option>
-                            <option value="Designer">Designer</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="Associate Attorney">Associate Attorney</option>
-                            <option value="Ecommerce Manager">Ecommerce Manager</option>
-                            <option value="Realtor">Realtor</option>
-                            <option value="Therapist">Therapist</option>
-                        </select>
-                        <select id="industryFilter">
-                            <option value="">All Industries</option>
-                            <option value="Accounting">Accounting</option>
-                            <option value="Advertising / Marketing / PR">Advertising / Marketing / PR</option>
-                            <option value="Architecture">Architecture</option>
-                            <option value="Arts / Entertainment">Arts / Entertainment</option>
-                            <option value="Banking / Mortgage / Finance">Banking / Mortgage / Finance</option>
-                            <option value="Education / Teaching">Education / Teaching</option>
-                            <option value="Graphic Design / CAD">Graphic Design / CAD</option>
-                            <option value="Internet / E-commerce">Internet / E-commerce</option>
-                            <option value="IT / Software / Systems">IT / Software / Systems</option>
-                            <option value="Legal / Lawyer">Legal / Lawyer</option>
-                            <option value="Management (Non-Executive)">Management (Non-Executive)</option>
-                            <option value=".Management (Executive)">.Management (Executive)</option>
-                            <option value="Real Estate / Property Mgmt">Real Estate / Property Mgmt</option>
-                            <option value="Sales / Sales Management / Business Development">Sales / Sales Management /
-                                Business Development</option>
-                            <option value="Social Services / Counseling">Social Services / Counseling</option>
-                        </select>
+                        <input type="text" id="searchInput" placeholder="Search careers..." onkeyup="searchCareers()" />
                     </section>
                 </ul>
             </nav>
@@ -112,6 +76,7 @@
         </button>
     </div>
 </footer>
+<script src="./assets/careerPageResources.js"></script>
 <script src="./assets/careerPage.js"></script>
 
 </html>
