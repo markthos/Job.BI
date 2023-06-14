@@ -13,12 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
       loginForm.style.display = "block";
       signupForm.style.display = "none";
     });
-  
-    signupLink.addEventListener("click", function(event) {
-      event.preventDefault();
-      loginForm.style.display = "none";
-      signupForm.style.display = "block";
-    });
+
+    loginForm.addEventListener("click", function(event) {
+        event.preventDefault();
+        loginLink.style.display = "block";
+        signupForm.style.display = "block"
+        loginForm.style.display = "none"
+        signupLink.style.display = "block";
+        signupForm.style.display = "block";
+      });
+
 });
   
   
