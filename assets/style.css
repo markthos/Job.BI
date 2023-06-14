@@ -13,34 +13,13 @@ body {
     border-radius: 12px;
     box-shadow: rgba (0, 0, 0, 0.1);
     pointer-events: none;
+=======
 }
 
-/* Add custom styles for the login and signup forms */
-.form-box {
-    width: 300px;
-    margin: 0 auto;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    position: absolute;
-  }
- 
- 
-  .form-box h2 {
-    text-align: center;
-  }
-  
-  .input-box {
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .input-field {
-
-  }
 
 
-
-
-
-
+.form-container {
+position: relative;
+top: 50%;
+left: 40%;
+}
