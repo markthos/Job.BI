@@ -3,6 +3,43 @@ body {
   background-size: cover;
 }
 
+/* Add styles to the header container for all pages with links and buttons justified to the right*/
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.header li a {
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: goldenrod;
+  font-size: 20px;
+}
+
+
+.button {
+  background-color: teal;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
 .form-container {
     position: absolute;
     top: 50%;
