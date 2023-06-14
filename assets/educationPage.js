@@ -1,3 +1,51 @@
+
+var searchButton = document.getElementById("search-button");
+
+var clientId = "lBdeX59qHTdt7CSdvQeIZy8H1nJlbpAbEntp2QGc";
+var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIHdch914k884aa7ZJfN0MZw9cdfFmXM5xa3aTBh0D40Lgnl8yIXAVrW5GGRKLCKz30oeTg"; 
+
+// Authenticate and get the bearer token
+var token = btoa(clientId + ":" + clientSecret);
+
+searchButton.addEventListener("click", function() {
+  var searchInput = document.getElementById("search-input").value.toLowerCase();
+  console.log(searchInput);
+  makeApiCall(searchInput);
+});
+
+
+//Makes the API request and updates the course info
+// Helper function to make authenticated API calls
+function makeApiCall(searchInput) {
+  var apiUrl = `https://www.udemy.com/api-2.0/courses/?search=${searchInput}`;
+    fetch(apiUrl, {
+        headers: {
+            "Authorization": "Basic " + token
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      var courseInfoContainer = document.getElementById("course-info");
+
+      //clear the placeholder content
+      courseInfoContainer.innerHTML = "";
+    
+      //Process the API response data and update the HTML
+    data.results.forEach(course => {
+      var courseItem = document.createElement("div");
+      courseItem.classList.add('course-item');
+      //insert carousel or cards between these tick marks
+      courseItem.innerHTML = ` 
+      <h3>${course.title}</h3>
+      <p>${course.headline}</p>
+      `;
+      courseInfoContainer.appendChild(courseItem);
+    })
+    .catch(error => console.error(error));
+  })
+}
+
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
 SlideShow(slidePosition); // Call the function to display the current slide at the beginning
@@ -28,13 +76,6 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable"; // Add the "enable" class to the current dot
 }
 
-// Mock course data
-var courses = [
-  { title: 'Web Development for Beginners', platform: 'Coursera', description: 'An introductory course on web development.' },
-  { title: 'Data Science: Foundations', platform: 'Udemy', description: 'A comprehensive introduction to data science.' },
-  // Add more courses as needed...
-];
-
 // Function to display courses
 function displayCourses(courses) {
   var courseList = document.getElementById('course-info'); // Get the course list element
@@ -61,3 +102,37 @@ function searchCourses() {
   var filteredCourses = courses.filter(course => course.title.toLowerCase().includes(searchInput)); // Filter the courses based on the search input
   displayCourses(filteredCourses); // Display the filtered courses
 }
+
+
+
+
+
+//**********Fetch the categories from the Udemy API**********
+/*
+
+fetch('https://rapidapi.com/jaypat87/api/indeed11?id=273&pass=HkdyhY4qQUmJXi5p')
+.then(response => response.json())
+.then(data => {
+  var categoryFilter = document.getElementById("category-filter");
+
+  //run through the categories and create options for the dropdown
+  data.forEach(category => {
+    var option = document.createElement ("option");
+    option.value = category;
+  option.text = category;
+  categoryFilter.appendChild(option);
+  });
+})
+.catch(error => {
+  console.error('Error', error);
+});
+
+console.log(displayCourses); */
+
+
+
+
+//This is commented out from line 30, 31. Keep for now
+
+/* <p>${course.location}</p>
+   <a href= "${course.applyLink}">Apply Now</a>  */
