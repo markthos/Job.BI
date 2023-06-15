@@ -29,6 +29,15 @@
                     <div id="updateFormContainer" style="display: none;">
                         <h3>Update Proflie</h3>
                         <form id="updateForm">
+                            <label for="usernameInput">Username</label>
+                            <input type="text" id="usernameInput" required>
+                            <br>
+                            <label for="passwordInput">Password</label>
+                            <input type="password" id="passwordInput" required>
+                            <br>
+                            <label for="confirmPasswordInput">Confirm Password</label>
+                            <input type="password" id="confirmPasswordInput" required>
+                            <br>
                             <label for="nameInput">Name</label>
                             <input type="text" id="nameInput" required>
                             <br>
@@ -37,6 +46,12 @@
                             <br>
                             <label for="interestsInput">Interests</label>
                             <input type="text" id="interestsInput" required>
+                            <br>
+                            <label for="educationInput">Education</label>
+                            <input type="text" id="educationInput" required>
+                            <br>
+                            <label for="careerGoalsInput">Career Goals</label>
+                            <input type="text" id="careerGoalsInput" required>
                             <br>
                             <button type="submit" class="btn">Update</button>
                             <button type="button" id="skipBtn" class="btn">Skip</button>
@@ -54,6 +69,8 @@
                 <section id="name"></section>
                 <section id="email"></section>
                 <section id="interests"></section>
+                <section id="education"></section>
+                <section id="careerGoals"></section>
                 <section id="notifications"></section>
                 <section id="progress"></section>
             </section>
