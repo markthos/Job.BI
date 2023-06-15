@@ -30,9 +30,9 @@ displayUser(retrievedUser);
 var updateProfileBtn = document.getElementById('updateProfileBtn');
 var updateFormContainer = document.getElementById('updateFormContainer');
 var updateForm = document.getElementById('updateForm');
-var nameInput = document.getElementById('NameInput');
-var emailInput = document.getElementById('EmailInput');
-var interestsInput = document.getElementById('InterestsInput');
+var nameInput = document.getElementById('nameInput');
+var emailInput = document.getElementById('emailInput');
+var interestsInput = document.getElementById('interestsInput');
 var cancelBtn = document.getElementById('cancelBtn');
 
 updateProfileBtn.addEventListener('click', function() {
@@ -42,7 +42,7 @@ updateProfileBtn.addEventListener('click', function() {
 updateForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    retrievedUser.name - nameInput.value;
+    retrievedUser.name = nameInput.value;
     retrievedUser.email = emailInput.value;
     retrievedUser.interests = interestsInput.value.split(',');
 
