@@ -21,15 +21,15 @@ signupLink.addEventListener("click", function(event) {
   });
 
   // Handle loginForm submit
-  const loginFormContainer = document.getElementById("loginForm");
-  loginForm.addEventListener("submit", function(event) {
+  const loginFormElement = document.getElementById("loginForm");
+  loginFormElement.addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     // Make an API request to authenticate the user
     // Replace 'API_ENDPOINT' with your URL of your API endpoint for login
-    fetch("/api/v2/clientAwareMemberHandles", {
+    fetch("/api/GET https://api.linkedin.com/v2/me", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
