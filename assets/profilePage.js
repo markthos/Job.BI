@@ -3,7 +3,8 @@ var user = {
     name: 'Mama Mo',
     email: 'monique.merzoug@icloud.com',
     interests: ['Web Development', 'Visual Merchandising'],
-    myCourses: ['1: Course 1', '2: Course 2'],
+    education: ['1: Course 1', '2: Course 2'],
+    careerGoals: ['1: Career Goal 1', '2: Career Goal 2'],
 };
 
 // Save user data to local storage
@@ -17,10 +18,14 @@ function displayUser(user) {
     var nameElement = document.getElementById('name');
     var emailElement = document.getElementById('email');
     var interestsElement = document.getElementById('interests');
+    var educationElement = document.getElementById('education');
+    var careerGoalsElement = document.getElementById('careerGoals');
 
     nameElement.textContent = 'Name: ' + user.name;
     emailElement.textContent = 'Email: ' + user.email;
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
+    educationElement.textContent = 'Education: ' + user.education.join(', ');
+    careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
 }
 
 // Call the function to update the HTML
@@ -45,6 +50,8 @@ updateForm.addEventListener('submit', function(event) {
     retrievedUser.name = nameInput.value;
     retrievedUser.email = emailInput.value;
     retrievedUser.interests = interestsInput.value.split(',');
+    retrievedUser.education = educationInput.value.split(',');
+    retrievedUser.careerGoals = careerGoalsInput.value.split(',');
 
     localStorage.setItem('user', JSON.stringify(retrievedUser));
     displayUser(retrievedUser);
