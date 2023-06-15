@@ -22,17 +22,16 @@
                     <li>
                         <a href="./landingPage.html">Home</a>
                     </li>
-                          <li>
-                            <button class="button">
-                              <a href="#log-in" class="btn" id="login">Log In</a>
-                            </button>
-                          </li>
-                          <li>
-                            <button class="button">
-                              <a href="#signup" class="btn" id="signup">Sign Up</a>
-                            </button>
-                          </li>
-                                            
+                    <li>
+                        <button class="button">
+                            <a href="#log-in" class="btn" id="login">Log In</a>
+                        </button>
+                        </li>
+                        <li>
+                        <button class="button">
+                            <a href="sign-up" class="btn" id="signup">Sign Up</a>
+                        </button>
+                        </li>
                     <section class="search-bar">
                         <input type="text" id="search-input" placeholder="Search courses..."/>
                         <button id = "search-button">Search</button>
@@ -69,6 +68,67 @@
         <span class="dots" onclick="currentSlide(2)"></span>
         <span class="dots" onclick="currentSlide(3)"></span>
     </div>
+
+    
+ <div class="form-container">
+    <div class="form-box login">  
+       <h2>Login</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="name" placeholder="Username" id="usernameInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="loginBtn">Login</button>
+        </form>
+        <div class="login-register">
+            <p>Don't have an account? <a href="#" class="signup-link" id="signupLink">Signup</a></p>
+        </div>
+    </div>
+ </div>
+
+
+ <div class="form-container">
+    <div class="form-box signup">
+        <h2>Signup</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="text" placeholder="Enter your username" id="usernameInput">
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Create Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Confirm Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="login-register">
+                <input type="submit" class="btn" id="signupBtn"></input>
+                <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
     
 </body>
     <!--Icon Bar-->
