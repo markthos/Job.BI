@@ -33,7 +33,7 @@ var updateForm = document.getElementById('updateForm');
 var nameInput = document.getElementById('nameInput');
 var emailInput = document.getElementById('emailInput');
 var interestsInput = document.getElementById('interestsInput');
-var cancelBtn = document.getElementById('cancelBtn');
+var skipBtn = document.getElementById('skipBtn');
 
 updateProfileBtn.addEventListener('click', function() {
     updateFormContainer.style.display = 'block';
@@ -51,12 +51,30 @@ updateForm.addEventListener('submit', function(event) {
     updateFormContainer.style.display = 'none';
 });
 
-//cancel button event listener
-cancelBtn.addEventListener('click', function() {
-    updateForm.requestFullscreen();
+// Skip button event listener
+skipBtn.addEventListener('click', function() {
     updateFormContainer.style.display = 'none';
 });
 
+var searchitem = document.getElementById ("get-quote")
+searchitem.addEventListener ("click",getQuotesList)
+
+window.onload = getQuotesList
+
+
+function getQuotesList(e){
+
+    fetch("https://type.fit/api/quotes")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) { 
+        console.log(data);
+        console.log(data.length)
+        var ind = Math.floor(Math.random() * data.length)
+        document.getElementById("quote").innerText = data[ind].text + " ~~~"+data[ind].author
+      });
+}
 // Function to update HTML with user data
 // function displayUser(user) {
 //     document.querySelector('.profile').innerHTML = `
