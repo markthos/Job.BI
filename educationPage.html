@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--New Proxy that was created to deal with the API key CORS issue -->
     <script src="http://bucky-cors-proxy.herokuapp.com/fetch.js"></script>
 </head>
 
@@ -25,7 +26,8 @@
                         <a href="schools">Schools</a>
                     </li>
                     <section class="search-bar">
-                        <input type="text" id="searchInput" placeholder="Search courses..." onkeyup="searchCourses()" />
+                        <input type="text" id="search-input" placeholder="Search courses..."/>
+                        <button id = "search-button">Search</button>
                     </section>
                 </ul>
             </nav>
