@@ -26,6 +26,8 @@ function displayUser(user) {
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
     educationElement.textContent = 'Education: ' + user.education.join(', ');
     careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
+    profilePicElement.src = user.profilePic;
+
 }
 
 // Call the function to update the HTML
@@ -52,6 +54,12 @@ updateForm.addEventListener('submit', function(event) {
     retrievedUser.interests = interestsInput.value.split(',');
     retrievedUser.education = educationInput.value.split(',');
     retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+
+    // Check if a new profile picture is provided
+    if (profilePicInput.value !== '') {
+        retrievedUser.profilePic = profilePicInput.value;
+        localStorage.setItem('user', JSON.stringify(retrievedUser));
+    }
 
     localStorage.setItem('user', JSON.stringify(retrievedUser));
     displayUser(retrievedUser);
