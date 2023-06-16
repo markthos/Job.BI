@@ -1,74 +1,173 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const loginLink = document.getElementById("login");
-  const signupLink = document.getElementById("signup");
-  const loginForm = document.querySelector(".form-box.login");
-  const signupForm =  document.querySelector(".form-box.signup");
+  var loginLink = document.getElementById("login");
+  var signupLink = document.getElementById("signup");
+  var loginForm = document.querySelector(".form-box.login");
+  var signupForm =  document.querySelector(".form-box.signup");
+  // const name = document.getElementById("name");
+  // const email = document.getElementById("email");
+  // const password = document.getElementById("password");
+  // const form = document.getElementById("form");
 
- loginForm.style.display = "none";
+//   // Create var user data
+// var user = {
+//   username: 'Mama Mo',
+//   email: 'monique.merzoug@icloud.com',
+//   password: '123456789',
+// };
+
+  loginForm.style.display = "none";
   signupForm.style.display = "none"; 
 
 
 loginLink.addEventListener("click", function(event) {
   event.preventDefault();
   loginForm.style.display = "block";
-  signupForm.style.display = "none";
+   signupForm.style.display = "none";
+
+ });
+
+ signupLink.addEventListener("click", function(event) {
+   event.preventDefault();
+   loginForm.style.display = "none";
+   signupForm.style.display = "block";
+
+ });
+
+
 });
 
-signupLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "none";
-  signupForm.style.display = "block";
-});
+// Define const user data
+var userData = {
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "password123"
+};
+
+//  // // Store user data in local storage
+ localStorage.setItem("userData", JSON.stringify(userData));
+
+// // Retrieve user data from local storage
+var retrievedUser = JSON.parse(localStorage.getItem("userData"));
+
+// Function to update the HTML with user data
+var displayUserData = (user) => {
+  var name = document.getElementById("name");
+  var email = document.getElementById("email");
+  var password = document.getElementById("password");
+  var form = document.getElementById("form");
+
+  name.innerText = user.name;
+  email.innerText = user.email;
+  password.innerText = user.password;
+};
+
+// Call the function to update the HTML
+ displayUserData(retrievedUser);
+
+ // Function to update the HTML
+ 
+
+//  // Save user data to local storage
+// localStorage.setItem('user', JSON.stringify(user));
+
+// // Retrieve username and password data from local storage
+// var retrievedUser = JSON.parse(localStorage.getItem('username, password'));
+
+// ;
 
 
-var signupFormElement = document.getElementById("signupForm");
 
-  signupFormElement.addEventListener("submit", function(event) {
-    event.preventDefault();
+//   form.addEventListener("submit", (e) => {
+//     e.preventDefault();
 
-    var username = document.querySelector("#usernameInput").value;
-    var email = document.querySelector("#emailInput").value;
-    var password = document.querySelector("#passwordInput").value;
+//   });
+// });
+  // //   validateInputs();
+  // // });
 
-    if (username === "") {
-      displayMessage("error", "Username cannot be blank");
-    } else if (email === "") {
-      displayMessage("error", "Email cannot be blank");
-    } else if (password === "") {
-      displayMessage("error", "Password cannot be blank");
-    } else {
-      displayMessage("success", "Registered successfully");
+  // // const setError = (element, message) => {
+  // //   const inputControl = element.parentElement;
+  // //   const errorDisplay = inputControl.querySelector(".error");
 
-      // Redirect the user to another page
-      window.location.href = "http://127.0.0.1:5500/profilePage.html";
-    }
-  });
+  // //   errorDisplay.innerText = message;
+  // //   inputControl.classList.add("error");
+  // //   inputControl.classList.remove('success');
+  // // }
 
-  function validateSignup(username, email, password) {
-    if (username.trim() === "") {
-      displayMessage("error", "Username cannot be blank");
-      return false;
-    }
+  // // const validateInputs = () => {
+  // //   const usernameValue = usernameValue.value.trim;
+  // //   const emailValue = emailValue.value.trim;
+  // //   const passwordValue = passwordValue.value.trim;
+
+
+  // //    if (username.value === '' || name.value === null) {
+  // //      message.push("Name is required");
+  // //    }
+  // //    if (email.value === '' || email.value === null) {
+  // //     message.push("Email is required");
+  // //    }
+  // //    if (password.value === '' || password.value === null) {
+  // //     message.push("Password is required"); 
+  // //   if (message.length > 0) {
+  // //     displayMessage("error", message);
+  // //   } else {
+  // //     //Redirect the user to another page
+  // //     window.location.href = "http://127.0.0.1:5500/profilePage.html";
+  // //   }
+  //    });
   
-    if (email.trim() === "") {
-      displayMessage("error", "Email cannot be blank");
-      return false;
-    }
+
+
+
+
+// var signupFormElement = document.getElementById("signupForm");
+
+//   signupFormElement.addEventListener("submit", function(event) {
+//     event.preventDefault();
+
+//     var username = document.querySelector("#usernameInput").value;
+//     var email = document.querySelector("#emailInput").value;
+//     var password = document.querySelector("#passwordInput").value;
+
+//     if (username === "") {
+//       displayMessage("error", "Username cannot be blank");
+//     } else if (email === "") {
+//       displayMessage("error", "Email cannot be blank");
+//     } else if (password === "") {
+//       displayMessage("error", "Password cannot be blank");
+//     } else {
+//       displayMessage("success", "Registered successfully");
+
+//       // Redirect the user to another page
+//       window.location.href = "http://127.0.0.1:5500/profilePage.html";
+//     }
+//   });
+
+//   function validateSignup(username, email, password) {
+//     if (username.trim() === "") {
+//       displayMessage("error", "Username cannot be blank");
+//       return false;
+//     }
   
-    if (!isValidEmail(email)) {
-      displayMessage("error", "Invalid email format");
-      return false;
-    }
+//     if (email.trim() === "") {
+//       displayMessage("error", "Email cannot be blank");
+//       return false;
+//     }
   
-    if (password.trim() === "") {
-      displayMessage("error", "Password cannot be blank");
-      return false;
-    }
+//     if (!isValidEmail(email)) {
+//       displayMessage("error", "Invalid email format");
+//       return false;
+//     }
   
-    return true;
-  }
+//     if (password.trim() === "") {
+//       displayMessage("error", "Password cannot be blank");
+//       return false;
+//     }
   
-});
+//     return true;
+//   }
+  
+// });
 
 
 // var loginBtn = document.getElementById("loginBtn");
