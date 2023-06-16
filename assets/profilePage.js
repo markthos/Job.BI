@@ -1,5 +1,6 @@
 // Mock user data
 var user = {
+    profilePic: 'assets\images\pexels-cottonbro-studio-6626882.jpg',
     name: 'Mama Mo',
     email: 'monique.merzoug@icloud.com',
     interests: ['Web Development', 'Visual Merchandising'],
@@ -44,26 +45,7 @@ var emailInput = document.getElementById('emailInput');
 var interestsInput = document.getElementById('interestsInput');
 var educationInput = document.getElementById('educationInput');
 var careerGoalsInput = document.getElementById('careerGoalsInput');
-// Inside the updateForm submit event listener
 var profilePicInput = document.getElementById('profilePicInput');
-
-// Get the selected profile picture file
-var selectedFile = profilePicInput.files[0];
-
-// Check if a file is selected
-if (selectedFile) {
-  var reader = new FileReader();
-
-  reader.onload = function(event) {
-    // Convert the file to a data URL
-    var dataURL = event.target.result;
-    // Save the profile picture in local storage
-    localStorage.setItem('profilePic', dataURL);
-  };
-    // Read the selected file as Data URL
-    reader.readAsDataURL(selectedFile);
-}
-
 
 var skipBtn = document.getElementById('skipBtn');
 
@@ -72,19 +54,39 @@ updateProfileBtn.addEventListener('click', function() {
 });
 
 updateForm.addEventListener('submit', function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    retrievedUser.name = nameInput.value;
-    retrievedUser.email = emailInput.value;
-    retrievedUser.interests = interestsInput.value.split(',');
-    retrievedUser.education = educationInput.value.split(',');
-    retrievedUser.careerGoals = careerGoalsInput.value.split(',');
-    retrievedUser.profilePic = profilePicInput.value;
+  retrievedUser.name = nameInput.value;
+  retrievedUser.email = emailInput.value;
+  retrievedUser.interests = interestsInput.value.split(',');
+  retrievedUser.education = educationInput.value.split(',');
+  retrievedUser.careerGoals = careerGoalsInput.value.split(',');
 
-    localStorage.setItem('user', JSON.stringify(retrievedUser));
-    displayUser(retrievedUser);
-    updateFormContainer.style.display = 'none';
+  var profilePicInput = document.getElementById('profilePicInput');
+  var selectedFile = profilePicInput.files[0];
+
+  if (selectedFile) {
+      var reader = new FileReader();
+
+      reader.onload = function(event) {
+          // Convert the file to a data URL
+          var dataURL = event.target.result;
+          // Save the profile picture in local storage
+          localStorage.setItem('profilePic', dataURL);
+
+          // Update the profile picture source in the HTML
+          profilePicElement.src = dataURL;
+      };
+
+      // Read the selected file as a Data URL
+      reader.readAsDataURL(selectedFile);
+  }
+
+  localStorage.setItem('user', JSON.stringify(retrievedUser));
+  displayUser(retrievedUser);
+  updateFormContainer.style.display = 'none';
 });
+
 
 // Skip button event listener
 skipBtn.addEventListener('click', function() {
