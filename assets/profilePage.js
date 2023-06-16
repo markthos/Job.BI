@@ -28,7 +28,8 @@ function displayUser(user) {
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
     educationElement.textContent = 'Education: ' + user.education.join(', ');
     careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
-    profilePicElement.src = 'https://i.pinimg.com/originals/0f/6e/2e/0f6e2e2b6b0b0b0b0b0b0b0b0b0b0b0b.jpg';
+    profilePicElement.src = localStorage.getItem('profilePic') || 'default-profile-pic.png';
+
 }
 
 // Call the function to update the HTML
@@ -43,7 +44,29 @@ var emailInput = document.getElementById('emailInput');
 var interestsInput = document.getElementById('interestsInput');
 var educationInput = document.getElementById('educationInput');
 var careerGoalsInput = document.getElementById('careerGoalsInput');
+// Inside the updateForm submit event listener
 var profilePicInput = document.getElementById('profilePicInput');
+var selectedFile = profilePicInput.files[0];
+
+// ...
+
+// Get the selected profile picture file
+var selectedFile = profilePicInput.files[0];
+
+// Check if a file is selected
+if (selectedFile) {
+  var reader = new FileReader();
+
+  reader.onload = function(event) {
+    // Convert the file to a data URL
+    var dataURL = event.target.result;
+    // Save the profile picture in local storage
+    localStorage.setItem('profilePic', dataURL);
+  };
+    // Read the selected file as Data URL
+    reader.readAsDataURL(selectedFile);
+}
+
 
 var skipBtn = document.getElementById('skipBtn');
 
