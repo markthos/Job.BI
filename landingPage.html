@@ -80,22 +80,28 @@
 
 
 <div class="form-container">
-    <div class="form-box login">  
+    <div class="form-box login" id="loginForm">  
        <h2>Login</h2>
         <form>
             <div class="input-box" id="login-form">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="name" placeholder="Username" id="usernameField" required>
+                    <input type="name" placeholder="Username" id="username" required>
+                </div>
+            </div>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="email" placeholder="Email" id="email" required>
                 </div>
             </div>
             <div class="input-box">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Password" id="passwordField" required>
+                    <input type="password" placeholder="Password" id="password" required>
                 </div>
             </div>
-              <button type="submit" class="btn" id="loginBtn">Login</button>
+              <button type="submit" value="login" class="btn" id="loginBtn" onlick="auth()">Login</button>
               <!-- // Link to be redirect to login page
               <p>Don't have an account? <a href="http://127.0.0.1:5500/landingPage.html#sign-up" class="signup-link" id="signupLink">Signup</a></p> -->
             </div>
@@ -107,8 +113,9 @@
  <div class="form-container">
     <div class="form-box signup" id="signupForm">
         <h2>Signup</h2>
-        <form>
-            <div class="input-box" id="login-form">
+        <div id="error message"></div>
+        <form id="form" name='signup' onSubmit="return valid();" action ="profilePage.html">
+            <div class="input-box" id="signup-form">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
                     <input type="text" placeholder="Enter your username" id="usernameInput">
@@ -145,6 +152,20 @@
 
     </div>
 </footer>
+
+<!-- <script>
+    function auth()
+       var username = document.getElementById("usernameField").value;
+       var password = document.getElementById("passwordField").value;
+       if (username= "admin" && password == "admin123") {
+        window.location.assign('./profile.html')
+        alert("You are successful logged in");
+       }
+       else{
+        alert("Invalid username or password");
+        return;
+       }
+</script> -->
 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
