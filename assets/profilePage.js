@@ -46,9 +46,6 @@ var educationInput = document.getElementById('educationInput');
 var careerGoalsInput = document.getElementById('careerGoalsInput');
 // Inside the updateForm submit event listener
 var profilePicInput = document.getElementById('profilePicInput');
-var selectedFile = profilePicInput.files[0];
-
-// ...
 
 // Get the selected profile picture file
 var selectedFile = profilePicInput.files[0];
