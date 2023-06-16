@@ -1,11 +1,11 @@
 // Mock user data
 var user = {
     profilePic: 'assets\images\pexels-cottonbro-studio-6626882.jpg',
-    name: 'John Doe',
-    email: 'jDoe@webdeveloper.com',
-    interests: ['Web Development', 'Visual Merchandising'],
-    education: ['1: UC Berkeley Coding Bootcamp', '2: Stanford University Code in Place'],
-    careerGoals: ['1: Become a Code Monkey', '2: Create fun and interactive websites'],
+    name: '',
+    email: '',
+    interests: [''],
+    education: [''],
+    careerGoals: [''],
 };
 
 // Save user data to local storage
@@ -50,6 +50,24 @@ var skipBtn = document.getElementById('skipBtn');
 
 updateProfileBtn.addEventListener('click', function() {
     updateFormContainer.style.display = 'block';
+    // Allow User to move through form with enter key
+    var formInputs = document.querySelectorAll('#updateForm input');
+
+formInputs.forEach(function(input, index) {
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            var nextIndex = index + 1;
+            if (nextIndex < formInputs.length) {
+                formInputs[nextIndex].focus();
+            } else {
+                // If the current input is the last one, you can trigger the form submission
+                updateForm.submit();
+            }
+        }
+    });
+});
+   
 
     // Populate the form with the user data from local storage
     nameInput.value = retrievedUser.name;
