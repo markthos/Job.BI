@@ -29,6 +29,15 @@
                     <div id="updateFormContainer" style="display: none;">
                         <h3>Update Proflie</h3>
                         <form id="updateForm">
+                            <label for="usernameInput">Username</label>
+                            <input type="text" id="usernameInput" required>
+                            <br>
+                            <label for="passwordInput">Password</label>
+                            <input type="password" id="passwordInput" required>
+                            <br>
+                            <label for="confirmPasswordInput">Confirm Password</label>
+                            <input type="password" id="confirmPasswordInput" required>
+                            <br>
                             <label for="nameInput">Name</label>
                             <input type="text" id="nameInput" required>
                             <br>
@@ -38,8 +47,17 @@
                             <label for="interestsInput">Interests</label>
                             <input type="text" id="interestsInput" required>
                             <br>
+                            <label for="educationInput">Education</label>
+                            <input type="text" id="educationInput" required>
+                            <br>
+                            <label for="careerGoalsInput">Career Goals</label>
+                            <input type="text" id="careerGoalsInput" required>
+                            <br>
+                            <label for="profilePicInput">Profile Picture</label>
+                            <input type="file" id="profilePicInput" required>
+                            <br>
                             <button type="submit" class="btn">Update</button>
-                            <button type="button" id="cancelBtn" class="btn">Cancel</button>
+                            <button type="button" id="skipBtn" class="btn">Skip</button>
                         </form>
                     </div>
                 </ul>
@@ -51,14 +69,22 @@
         <section class="profile">
             <section id="user">
                 <h1 id="user-profile">Personal Profile</h1>
-                <section id="name">Name: </section>
-                <section id="email">Email: </section>
-                <section id="interests">Interests:</section>
+                <section id="profilePic"></section>
+                <section id="name"></section>
+                <section id="email"></section>
+                <section id="interests"></section>
+                <section id="education"></section>
+                <section id="careerGoals"></section>
                 <section id="notifications"></section>
                 <section id="progress"></section>
             </section>
         </section>
-
+        <section class="container">
+            <article id="quote">
+    
+            </article>
+            <button id="get-quote">Get Quote</button>
+        </section>
         <section class="content">
             <section id="alerts">
                 <h1 id="Notifications"></h1>
@@ -74,18 +100,17 @@
         </section>
 
     </div>
-    <!--Icon Bar-->
+   <!--Icon Bar-->
    <footer>
     <div class="icon-bar">
         <a href="#header"><i class="fa fa-home"></i></a>
         <a href="#contact-me"><i class="fa fa-handshake-o"></i></a>
-        <a href="mailto:monique.merzoug1@gmail.com"><i class="fa fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/monique-merzoug"><i class="fa fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/sneekymoniquey/"><i class="fa fa-instagram"></i></a>
-        <a href="https://github.com/MMerzoug?tab=repositories"><i class="fa fa-github"></i></a>
-        <button>
-            <a href="sign-out" class="btn">Sign Out</a>
-        </button>
+        <a href="https://markthos.github.io/Job.BI/"><i </a>
+        <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
+    
+        <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
+        <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
     </div>
 </footer>
 <script src="./assets/profilePage.js"></script>

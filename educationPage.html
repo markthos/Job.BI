@@ -17,14 +17,21 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#career-postings">Career Postings</a>
+                        <a href="./careerPage.html">Career Postings</a>
                     </li>
                     <li>
-                        <a href="#subjects">Subjects</a>
+                        <a href="./landingPage.html">Home</a>
                     </li>
                     <li>
-                        <a href="schools">Schools</a>
-                    </li>
+                        <button class="button">
+                            <a href="#log-in" class="btn" id="login">Log In</a>
+                        </button>
+                        </li>
+                        <li>
+                        <button class="button">
+                            <a href="sign-up" class="btn" id="signup">Sign Up</a>
+                        </button>
+                        </li>
                     <section class="search-bar">
                         <input type="text" id="search-input" placeholder="Search courses..."/>
                         <button id = "search-button">Search</button>
@@ -61,21 +68,81 @@
         <span class="dots" onclick="currentSlide(2)"></span>
         <span class="dots" onclick="currentSlide(3)"></span>
     </div>
+
+    
+ <div class="form-container">
+    <div class="form-box login">  
+       <h2>Login</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="name" placeholder="Username" id="usernameInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="loginBtn">Login</button>
+        </form>
+        <div class="login-register">
+            <p>Don't have an account? <a href="#" class="signup-link" id="signupLink">Signup</a></p>
+        </div>
+    </div>
+ </div>
+
+
+ <div class="form-container">
+    <div class="form-box signup">
+        <h2>Signup</h2>
+        <form>
+            <div class="input-box" id="login-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="text" placeholder="Enter your username" id="usernameInput">
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Create Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Confirm Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="login-register">
+                <input type="submit" class="btn" id="signupBtn"></input>
+                <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
     
 </body>
-    <!--Icon Bar-->
-    <footer>
-        <div class="icon-bar">
-            <a href="#header"><i class="fa fa-home"></i></a>
-            <a href="#contact-me"><i class="fa fa-handshake-o"></i></a>
-            <a href="mailto:monique.merzoug1@gmail.com"><i class="fa fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/monique-merzoug"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/sneekymoniquey/"><i class="fa fa-instagram"></i></a>
-            <a href="https://github.com/MMerzoug?tab=repositories"><i class="fa fa-github"></i></a>
-            <button>
-                <a href="sign-out" class="btn">Sign Out</a>
-            </button>
-        </div>
-    </footer>
+   <!--Icon Bar-->
+   <footer>
+    <div class="icon-bar">
+        <a href="#header"><i class="fa fa-home"></i></a>
+        <a href="#contact-me"><i class="fa fa-handshake-o"></i></a>
+        <a href="https://markthos.github.io/Job.BI/"><i </a>
+        <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
+    
+        <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
+        <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
+    </div>
+</footer>
     <script src="./assets/educationPage.js"></script>
 </html>
