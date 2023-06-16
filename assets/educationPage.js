@@ -7,8 +7,6 @@ var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIH
 // Authenticate and get the bearer token
 var token = btoa(clientId + ":" + clientSecret);
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
   const loginLink = document.getElementById("login");
   const signupLink = document.getElementById("signup");
@@ -40,9 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "./profilePage.html";
   });
 });
-
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const loginLink = document.getElementById("login");
@@ -102,8 +97,6 @@ document.getElementById("signupBtn").addEventListener("click", function(event) {
 });
 
 
-
-
 searchButton.addEventListener("click", function() {
   var searchInput = document.getElementById("search-input").value.toLowerCase();
   console.log(searchInput);
@@ -113,6 +106,7 @@ searchButton.addEventListener("click", function() {
 
 //Makes the API request and updates the course info
 // Helper function to make authenticated API calls
+
 function makeApiCall(searchInput) {
   var apiUrl = `https://www.udemy.com/api-2.0/courses/?search=${searchInput}`;
     fetch(apiUrl, {
@@ -134,8 +128,9 @@ function makeApiCall(searchInput) {
       courseItem.classList.add('course-item');
       //insert carousel or cards between these tick marks
       courseItem.innerHTML = ` 
-      <h3>${course.title}</h3>
-      <p>${course.headline}</p>
+        <h3><a href="https://www.udemy.com${course.url}" target="_blank">${course.title}</a></h3>
+        <p>${course.headline}</p>
+        <p>${course.image_240x135}</p>
       `;
       courseInfoContainer.appendChild(courseItem);
     })
@@ -201,30 +196,6 @@ function searchCourses() {
 }
 
 
-
-
-
-//**********Fetch the categories from the Udemy API**********
-/*
-
-fetch('https://rapidapi.com/jaypat87/api/indeed11?id=273&pass=HkdyhY4qQUmJXi5p')
-.then(response => response.json())
-.then(data => {
-  var categoryFilter = document.getElementById("category-filter");
-
-  //run through the categories and create options for the dropdown
-  data.forEach(category => {
-    var option = document.createElement ("option");
-    option.value = category;
-  option.text = category;
-  categoryFilter.appendChild(option);
-  });
-})
-.catch(error => {
-  console.error('Error', error);
-});
-
-console.log(displayCourses); */
 
 
 
