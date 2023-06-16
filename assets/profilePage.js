@@ -1,11 +1,11 @@
 // Mock user data
 var user = {
     profilePic: 'assets\images\pexels-cottonbro-studio-6626882.jpg',
-    name: 'Mama Mo',
-    email: 'monique.merzoug@icloud.com',
+    name: 'John Doe',
+    email: 'jDoe@webdeveloper.com',
     interests: ['Web Development', 'Visual Merchandising'],
-    education: ['1: Course 1', '2: Course 2'],
-    careerGoals: ['1: Career Goal 1', '2: Career Goal 2'],
+    education: ['1: UC Berkeley Coding Bootcamp', '2: Stanford University Code in Place'],
+    careerGoals: ['1: Become a Code Monkey', '2: Create fun and interactive websites'],
 };
 
 // Save user data to local storage
@@ -50,6 +50,13 @@ var skipBtn = document.getElementById('skipBtn');
 
 updateProfileBtn.addEventListener('click', function() {
     updateFormContainer.style.display = 'block';
+
+    // Populate the form with the user data from local storage
+    nameInput.value = retrievedUser.name;
+    emailInput.value = retrievedUser.email;
+    interestsInput.value = retrievedUser.interests.join(', ');
+    educationInput.value = retrievedUser.education.join(', ');
+    careerGoalsInput.value = retrievedUser.careerGoals.join(', ');
 });
 // Update Profile form submit event
 updateForm.addEventListener('submit', function(event) {
