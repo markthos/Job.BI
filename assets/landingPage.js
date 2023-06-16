@@ -20,19 +20,158 @@ signupLink.addEventListener("click", function(event) {
   signupForm.style.display = "block";
 });
 
+
+var signupFormElement = document.getElementById("signupForm");
+
+  signupFormElement.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var username = document.querySelector("#usernameInput").value;
+    var email = document.querySelector("#emailInput").value;
+    var password = document.querySelector("#passwordInput").value;
+
+    if (username === "") {
+      displayMessage("error", "Username cannot be blank");
+    } else if (email === "") {
+      displayMessage("error", "Email cannot be blank");
+    } else if (password === "") {
+      displayMessage("error", "Password cannot be blank");
+    } else {
+      displayMessage("success", "Registered successfully");
+
+      // Redirect the user to another page
+      window.location.href = "http://127.0.0.1:5500/profilePage.html";
+    }
+  });
+
+  function validateSignup(username, email, password) {
+    if (username.trim() === "") {
+      displayMessage("error", "Username cannot be blank");
+      return false;
+    }
+  
+    if (email.trim() === "") {
+      displayMessage("error", "Email cannot be blank");
+      return false;
+    }
+  
+    if (!isValidEmail(email)) {
+      displayMessage("error", "Invalid email format");
+      return false;
+    }
+  
+    if (password.trim() === "") {
+      displayMessage("error", "Password cannot be blank");
+      return false;
+    }
+  
+    return true;
+  }
+  
 });
 
 
+// var loginBtn = document.getElementById("loginBtn");
+// var signupBtn = document.getElementById("signupBtn");
+// var signupForm = document.querySelector(".form-box.signup");
 
-
-
-// var submitBtn = document.getElementById("submitBtn");
-
-// submitBtn.addEventListener("click", function(event) {
+// signupForm.addEventListener("submit", function(event) {
 //   event.preventDefault();
 
-//   var username = document.querySelector("#username").value;
-//   var email = document.querySelector("#emai").value;
+//   var username = document.querySelector("#usernameField").value;
+//   var password = document.querySelector("#passwordField").value;
+
+//   if (username === "") {
+//     displayMessage("error", "Username cannot be blank");
+//   } else if (password === "") {
+//     displayMessage("error", "Password cannot be blank");
+//   } else {
+//     displayMessage("success", "Registered successfully");
+
+//     // Redirect the user to another page
+//     window.location.href = "http://127.0.0.1:5500/profilePage.html";
+
+//     // TODO: Save username and password in local storage
+//     localStorage.setItem("username", username);
+//     localStorage.setItem("password", password);
+//   }
+// });
+
+// var signupForm = document.getElementById("signupForm");
+
+// signupForm.addEventListener("submit", function(event) {
+//   event.preventDefault();
+
+//   var username = document.querySelector("#usernameInput").value;
+//   var email = document.querySelector("#emailInput").value;
+//   var password = document.querySelector("#passwordInput").value;
+
+//   if (username === "") {
+//     displayMessage("error", "Username cannot be blank");
+//   } else if (email === "") {
+//     displayMessage("error", "Email cannot be blank");
+//   } else if (password === "") {
+//     displayMessage("error", "Password cannot be blank");
+//   } else {
+//     displayMessage("success", "Registered successfully");
+
+//     // Redirect the user to another page
+//     window.location.href = "http://127.0.0.1:5500/anotherPage.html";
+//   }
+// });
+
+// loginBtn.addEventListener("click", function(event) {
+//   event.preventDefault();
+
+// var username = document.querySelector("#usernameField").value;
+// var password = document.querySelector("#passwordField").value;
+
+// if (username === "") {
+//  displayMessage("error", "Username cannot be blank");
+//    } else if (email === "") {
+//      displayMessage("error", "Email cannot be blank");
+//     } else if (password === "") {
+//      displayMessage("error", "Password cannot be blank");
+//     } else {
+//     displayMessage("success", "Registered successfully");
+
+//      //Redirect the user to another page
+//     window.location.href = "http://127.0.0.1:5500/profilePage.html";
+
+//     //TODO:Save username, email, and password in local storage
+//      localStorage.setItem("username", username);
+//      localStorage.setItem("email", email);
+//     localStorage.setItem("password", password);
+//    }
+//   });
+
+  //signupBtn.addEventListener
+
+//if (username === "") {
+//     //displayMessage("error", "Username cannot be blank");
+//       } else if (email === "") {
+//         displayMessage("error", "Email cannot be blank");
+//        } else if (password === "") {
+//         displayMessage("error", "Password cannot be blank");
+//        } else {
+//        displayMessage("success", "Registered successfully");
+   
+//         //Redirect the user to another page
+//        window.location.href = "http://127.0.0.1:5500/profilePage.html";
+   
+//        //TODO:Save username, email, and password in local storage
+//         localStorage.setItem("username", username);
+//         localStorage.setItem("email", email);
+//        localStorage.setItem("password", password);
+//       }
+// });
+
+
+//submitBtn.addEventListener("click", function(event) {
+//  event.preventDefault();
+
+ //var username = document.querySelector("#username").value;
+// var email = document.querySelector("#emai").value;
 //   var password = document.querySelector("#password").value;
 
 //   if (username === "") {
