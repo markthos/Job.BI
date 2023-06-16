@@ -20,12 +20,15 @@ function displayUser(user) {
     var interestsElement = document.getElementById('interests');
     var educationElement = document.getElementById('education');
     var careerGoalsElement = document.getElementById('careerGoals');
+    var profilePicElement = document.getElementById('profilePic');
+    
 
     nameElement.textContent = 'Name: ' + user.name;
     emailElement.textContent = 'Email: ' + user.email;
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
     educationElement.textContent = 'Education: ' + user.education.join(', ');
     careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
+    profilePicElement.src = 'https://i.pinimg.com/originals/0f/6e/2e/0f6e2e2b6b0b0b0b0b0b0b0b0b0b0b0b.jpg';
 }
 
 // Call the function to update the HTML
@@ -38,6 +41,10 @@ var updateForm = document.getElementById('updateForm');
 var nameInput = document.getElementById('nameInput');
 var emailInput = document.getElementById('emailInput');
 var interestsInput = document.getElementById('interestsInput');
+var educationInput = document.getElementById('educationInput');
+var careerGoalsInput = document.getElementById('careerGoalsInput');
+var profilePicInput = document.getElementById('profilePicInput');
+
 var skipBtn = document.getElementById('skipBtn');
 
 updateProfileBtn.addEventListener('click', function() {
@@ -52,6 +59,7 @@ updateForm.addEventListener('submit', function(event) {
     retrievedUser.interests = interestsInput.value.split(',');
     retrievedUser.education = educationInput.value.split(',');
     retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+    retrievedUser.profilePic = profilePicInput.value;
 
     localStorage.setItem('user', JSON.stringify(retrievedUser));
     displayUser(retrievedUser);
