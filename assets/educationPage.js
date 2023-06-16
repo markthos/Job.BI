@@ -119,25 +119,24 @@ function makeApiCall(searchInput) {
       console.log(data);
       var courseInfoContainer = document.getElementById("course-info");
 
-      //clear the placeholder content
+      // Clear the placeholder content
       courseInfoContainer.innerHTML = "";
-    
-      //Process the API response data and update the HTML
-    data.results.forEach(course => {
-      var courseItem = document.createElement("div");
-      courseItem.classList.add('course-item');
-      //insert carousel or cards between these tick marks
-      courseItem.innerHTML = ` 
-        <h3><a href="https://www.udemy.com${course.url}" target="_blank">${course.title}</a></h3>
-        <p>${course.headline}</p>
-        <p>${course.image_240x135}</p>
-      `;
-      courseInfoContainer.appendChild(courseItem);
+
+      // Process the API response data and update the HTML
+      data.results.forEach(course => {
+        var courseItem = document.createElement("div");
+        courseItem.classList.add('course-item');
+        // Insert carousel or cards between these tick marks
+        courseItem.innerHTML = `
+          <h3><a href="https://www.udemy.com${course.url}" target="_blank">${course.title}</a></h3>
+          <p>${course.headline}</p>
+          <img src="${course.image_240x135}" alt="Course Thumbnail">
+        `;
+        courseInfoContainer.appendChild(courseItem);
+      });
     })
     .catch(error => console.error(error));
-  })
-}
-
+};
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
 SlideShow(slidePosition); // Call the function to display the current slide at the beginning
