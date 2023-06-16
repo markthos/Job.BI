@@ -10,17 +10,6 @@
      <link rel="stylesheet" href="./assets/style.css">  
 
 </head>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var signupBtn = document.getElementById('signupBtn');
-
-      signupBtn.addEventListener('click', function() {
-        // Redirect to the desired page
-        window.location.href = "http://127.0.0.1:5500/profilePage.html";
-      });
-    });
-  </script>
       
 
 <body>
@@ -61,6 +50,35 @@
     </button>
  </section>
 
+
+ <!-- <div id="login-modal">
+    <div class="modal">
+        <div class="modal-form"></div>
+         <div class="close-modal"></div>
+         &#10006;&#10006
+    </div>
+ </div>
+ <div class="login-form">
+    <h2> Login </h2>
+    <form action="">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <button type="button" class="submit-btn">Login</button>
+        </div>
+    </form> 
+    </div> -->
+
+<!-- <script type="text/javascript">
+    $(function(){
+        $('#log-in').click(function(){
+            $('#login-form').fadeIn();
+       });
+    });
+</script> -->
+
+
 <div class="form-container">
     <div class="form-box login">  
        <h2>Login</h2>
@@ -68,17 +86,18 @@
             <div class="input-box" id="login-form">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="name" placeholder="Username" id="usernameInput" required>
+                    <input type="name" placeholder="Username" id="usernameField" required>
                 </div>
             </div>
             <div class="input-box">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Password" id="passwordInput" required>
+                    <input type="password" placeholder="Password" id="passwordField" required>
                 </div>
             </div>
               <button type="submit" class="btn" id="loginBtn">Login</button>
-              <p>Don't have an account? <a href="http://127.0.0.1:5500/landingPage.html#sign-up" class="signup-link" id="signupLink">Signup</a></p>
+              <!-- // Link to be redirect to login page
+              <p>Don't have an account? <a href="http://127.0.0.1:5500/landingPage.html#sign-up" class="signup-link" id="signupLink">Signup</a></p> -->
             </div>
         </form>
     </div>
@@ -86,7 +105,7 @@
 
 
  <div class="form-container">
-    <div class="form-box signup">
+    <div class="form-box signup" id="signupForm">
         <h2>Signup</h2>
         <form>
             <div class="input-box" id="login-form">
@@ -98,19 +117,17 @@
             <div class="input-box">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Email" id="emailInput" required>
+                    <input type="email" placeholder="Email" id="emailInput" required>
                 </div>
             </div>
             <div class="input-box">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Confirm Password" id="passwordInput" required>
+                    <input type="password" placeholder="Password" id="passwordInput" required>
                 </div>
             </div>
-            <div class="login-register">
-                <input type="submit" class="btn" id="signupBtn"></input>
-                <p>Already have an account? <a href="#" class="login-link" id="loginLink">Login</a></p>
-            </div>
+            <div class="login-register" id="loginRegister">
+                <input type="submit" class="btn" id="submitBtn"></input>
         </form>
     </div>
 </div>
