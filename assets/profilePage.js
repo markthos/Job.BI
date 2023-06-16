@@ -29,7 +29,7 @@ function displayUser(user) {
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
     educationElement.textContent = 'Education: ' + user.education.join(', ');
     careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
-    profilePicElement.src = localStorage.getItem('profilePic') || 'default-profile-pic.png';
+    profilePicElement.src = localStorage.getItem('profilePic') || '/assets/images/pexels-cottonbro-studio-6626882.jpg';
 
 }
 
@@ -46,13 +46,12 @@ var interestsInput = document.getElementById('interestsInput');
 var educationInput = document.getElementById('educationInput');
 var careerGoalsInput = document.getElementById('careerGoalsInput');
 var profilePicInput = document.getElementById('profilePicInput');
-
 var skipBtn = document.getElementById('skipBtn');
 
 updateProfileBtn.addEventListener('click', function() {
     updateFormContainer.style.display = 'block';
 });
-
+// Update Profile form submit event
 updateForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -64,7 +63,7 @@ updateForm.addEventListener('submit', function(event) {
 
   var profilePicInput = document.getElementById('profilePicInput');
   var selectedFile = profilePicInput.files[0];
-
+// if loop to check if a file was selected by the user
   if (selectedFile) {
       var reader = new FileReader();
 
@@ -76,6 +75,7 @@ updateForm.addEventListener('submit', function(event) {
 
           // Update the profile picture source in the HTML
           profilePicElement.src = dataURL;
+          location.reload();
       };
 
       // Read the selected file as a Data URL
@@ -85,6 +85,7 @@ updateForm.addEventListener('submit', function(event) {
   localStorage.setItem('user', JSON.stringify(retrievedUser));
   displayUser(retrievedUser);
   updateFormContainer.style.display = 'none';
+  
 });
 
 
@@ -112,21 +113,3 @@ function getQuotesList(e){
         document.getElementById("quote").innerText = data[ind].text + " ~~~"+data[ind].author
       });
 }
-// Function to update HTML with user data
-// function displayUser(user) {
-//     document.querySelector('.profile').innerHTML = `
-//         <h3>User Profile</h3>
-//         <p>Name: ${user.name}</p>
-//         <p>Email: ${user.email}</p>
-//         <p>Interests: ${user.interests.join(', ')}</p>
-        
-//     `;
-
-//     document.querySelector('#messages').innerHTML = `
-//         <h3>My Courses</h3>
-//         ${user.myCourses.map(notification => `<p>${notification}</p>`).join('')}
-//     `;
-// }
-
-// Call the function to update the HTML
-// displayUser(retrievedUser);
