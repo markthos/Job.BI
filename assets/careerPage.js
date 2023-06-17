@@ -4,6 +4,7 @@ SlideShow(slidePosition); // Call the function to display the current slide at t
 
 // forward/Back controls
 function plusSlides(n) {
+  console.log(n);
   SlideShow(slidePosition += n); // Increase or decrease the current slide number and display the new slide
 }
 
@@ -14,8 +15,8 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   var i;
-  var slides = document.getElementsByClassName("containers"); // Get all slides
-  var circles = document.getElementsByClassName("dots"); // Get all dots
+  var slides = response;
+  var circles = document.querySelector(".dots"); // Get all dots
   if (n > slides.length) { slidePosition = 1 } // If the current slide number is greater than the total number of slides, reset it to 1
   if (n < 1) { slidePosition = slides.length } // If the current slide number is less than 1, set it to the total number of slides
   for (i = 0; i < slides.length; i++) {
@@ -33,20 +34,35 @@ function displayCareers(response) {
   var careerList = document.getElementById("job-info"); // Get the career list element
   careerList.innerHTML = ''; // Clear the existing content
 
-  for (var key in response) {
-    if (response.hasOwnProperty(key)) {
-      var job = response[key];
-      var jobItem = document.createElement("div");
-      jobItem.classList.add('job-item');
-      jobItem.innerHTML = `
-        <h3>${job.job_url}</h3>
-        <p>${job.linkedin_job_url_cleaned}</p>
-        <p>${job.company_name}</p>
-        <a href="${job.company_url}">Company Link</a>
+  // for (var key in response) {
+  //   if (response.hasOwnProperty(key)) {
+  //     var job = response[key];
+  //     var jobItem = document.createElement("div");
+  //     jobItem.classList.add('job-item');
+  //     jobItem.innerHTML = `
+  //       <h3>${job.job_url}</h3>
+  //       <p>${job.linkedin_job_url_cleaned}</p>
+  //       <p>${job.company_name}</p>
+  //       <a href="${job.company_url}">Company Link</a>
+  //     `;
+  //     careerList.appendChild(jobItem);
+  //     console.log (jobItem);
+  //   }
+  // }
+  for (let i = 0; i < response.length; i++) {
+    var jobItem = document.createElement("div");
+    jobItem.classList.add('job-item');
+    jobItem.innerHTML= `
+        <h3>${response[i].job_url}</h3>
+        <p>${response[i].linkedin_job_url_cleaned}</p>
+        <p>${response[i].company_name}</p>
+        <a href="${response[i].company_url}">Company Link</a>
       `;
       careerList.appendChild(jobItem);
-    }
   }
+  var j;
+  var circles = document.querySelector(".dots"); // Get all dots
+
 }
 
 // Initial display of careers
