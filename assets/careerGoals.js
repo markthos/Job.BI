@@ -69,15 +69,13 @@ function deleteGoal(index) {
 // Display goals on page load
 displayGoals();
 
-// Function to handle the signout button click
-function handleSignout() {
-    // Clear the stored credentials from localStorage
-    localStorage.removeItem("username");
-    localStorage.removeItem("password");
+// // Function to handle the signout button click
+// function handleSignout() {
+//     // Clear the stored credentials from localStorage
+//     localStorage.removeItem("username");
+//     localStorage.removeItem("password");
     
-    // Redirect to the landing page
-    window.location.href = "http://127.0.0.1:5500/landingPage.html";
-  }
+//     // Redirect to the landing page
+//     window.location.href = "http://127.0.0.1:5500/landingPage.html";
+//   }
   
-  // Event listener for the signout button
-  document.getElementById("signout").addEventListener("click", handleSignout);

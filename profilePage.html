@@ -111,9 +111,24 @@
         <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
         <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
+        <button id="signOutButton" class="btn" >Sign Out </button>
     </div>
 </footer>
 <script src="./assets/profilePage.js"></script>
+
+<script>
+    // Function to handle the sign-out functionality
+    function handleSignOut() {
+        // Perform any necessary sign-out logic, such as clearing session data or cookies
+
+        // Redirect to the landing page
+        window.location.href = "http://127.0.0.1:5500/landingPage.html";
+    }
+
+    // Event listener for the sign-out button
+    document.getElementById("signOutButton").addEventListener("click", handleSignOut);
+</script>
+
 </body>
 
 </html>

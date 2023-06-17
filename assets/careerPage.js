@@ -20,7 +20,7 @@ var searchButton = document.getElementById("search-button");
     searchInput.value = "";
   });
 
-// Event listeners for the login and signup buttons
+ // Event listeners for the login and signup buttons
 document.getElementById("login").addEventListener("click", showLoginForm);
 document.getElementById("signup").addEventListener("click", showSignupForm);
 
@@ -82,9 +82,9 @@ function handleLogin(event) {
 function handleSignup(event) {
   event.preventDefault(); // Prevent form submission
 
-  var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
+  var username = document.getElementById("usernameInput").value;
+  var email = document.getElementById("emailInput").value;
+  var password = document.getElementById("passwordInput").value;
 
   // Store the signup information in localStorage or perform any desired actions
   localStorage.setItem("username", username);
@@ -116,6 +116,20 @@ document.getElementById("signup").addEventListener("click", showSignupForm);
 
 // Call the initializePage function when the page loads
 window.addEventListener("load", initializePage);
+
+
+ // Function to handle the sign-out functionality
+ function handleSignOut() {
+  // Perform any necessary sign-out logic, such as clearing session data or cookies
+
+  // Redirect to the landing page
+  window.location.href = "http://127.0.0.1:5500/landingPage.html";
+}
+
+// Event listener for the sign-out button
+document.getElementById("signOutButton").addEventListener("click", handleSignOut);
+
+ 
 
 
 // Carousel
@@ -244,8 +258,6 @@ var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIH
 
 // Authenticate and get the bearer token
 var token = btoa(clientId + ":" + clientSecret);
-
-
 
 
 //  loginForm.addEventListener("click", function(event) {
