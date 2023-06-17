@@ -1,71 +1,266 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var loginLink = document.getElementById("login");
-  var signupLink = document.getElementById("signup");
-  var loginForm = document.querySelector(".form-box.login");
-  var signupForm =  document.querySelector(".form-box.signup");
-  // const name = document.getElementById("name");
-  // const email = document.getElementById("email");
-  // const password = document.getElementById("password");
-  // const form = document.getElementById("form");
+// Function to hide login and signup forms initially
+function hideForms() {
+  document.getElementById("login-form-container").style.display = "none";
+  document.getElementById("signup-form-container").style.display = "none";
+}
 
-//   // Create var user data
-// var user = {
-//   username: 'Mama Mo',
-//   email: 'monique.merzoug@icloud.com',
-//   password: '123456789',
-// };
+// Function to display login form
+function showLoginForm() {
+  document.getElementById("login-form-container").style.display = "block";
+  document.getElementById("signup-form-container").style.display = "none";
+}
 
-  loginForm.style.display = "none";
-  signupForm.style.display = "none"; 
+// Function to display signup form
+function showSignupForm() {
+  document.getElementById("signup-form-container").style.display = "block";
+  document.getElementById("login-form-container").style.display = "none";
+}
+
+// // Define valid credentials
+// var validCredentials = [
+//   { username: "", password: "", email: "" },
+//   // { username: "user1", password: "pass1", email: "user1@example.com" },
+//   // { username: "user2", password: "pass2", email: "user2@example.com" }
+// ];
+
+// Function to handle login form submission
+function handleLogin(event) {
+  event.preventDefault(); // Prevent form submission
+
+  var username = document.getElementById("usernameField").value;
+  var password = document.getElementById("passwordField").value;
+
+ // Perform any additional login validation here if needed
+
+// Store the credentials in localStorage
+  localStorage.setItem("username", username);
+  localStorage.setItem("password", password);
+
+  // Check if the username and password combination is valid
+  if (isValidCredentials(username, password)) {
+    // Store the credentials in localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    alert("You are successfully logged in");
+    window.location.href = "http://127.0.0.1:5500/profilePage.html"; // Redirect to profile page
+  } else {
+    alert("Invalid username or password");
+  }
+}
+  // Function to check if the username and password combination is valid
+function isValidCredentials(username, password) {
+  // You can implement your own logic here to validate the credentials
+  // For simplicity, let's assume any combination of username and password is valid
+  return true;
+}
 
 
-loginLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "block";
-   signupForm.style.display = "none";
+//   // Perform login validation and redirection
+//   if (username === "admin" && password === "admin123") {
+//     alert("You are successfully logged in");
+//     window.location.href = "http://127.0.0.1:5500/profilePage.html"; // Redirect to profile page
+//   } else {
+//     alert("Invalid username or password");
+//   }
+// }
 
- });
+// Function to display signup form
+function showSignupForm() {
+  document.getElementById("signup-form-container").style.display = "block";
+  document.getElementById("login-form-container").style.display = "none";
+}
 
- signupLink.addEventListener("click", function(event) {
-   event.preventDefault();
-   loginForm.style.display = "none";
-   signupForm.style.display = "block";
+// Function to handle signup form submission
+function handleSignup(event) {
+  event.preventDefault(); // Prevent form submission
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
 
- });
+  // Perform signup form validation and store user information
+  // You can use AJAX or make an API call to store the user information on the server
+
+  alert("Signup successful!");
+  window.location.href = "http://127.0.0.1:5500/profilePage.html"; // Redirect to signup success page
+}
+
+// Attach event listeners
+document.getElementById("login").addEventListener("click", showLoginForm);
+document.getElementById("signup").addEventListener("click", showSignupForm);
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+document.getElementById("signupForm").addEventListener("submit", handleSignup);
+
+// Hide the forms initially
+hideForms();
 
 
-});
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var loginForm = document.querySelector(".form-box.login");
+//   var signupForm = document.getElementById("signupForm");
+
+//   signupForm.addEventListener("submit", function(event) {
+//     event.preventDefault();
+   
+//     var usernameInput = document.getElementById("username");
+//     var emailInput = document.getElementById("email");
+//     var passwordInput = document.getElementById("password");
+   
+//     var username = usernameInput.value;
+//     var email = emailInput.value;
+//     var password = passwordInput.value;
+   
+//     // Perform validation logic here
+//     if (username === "" || email === "" || password === "") {
+//       alert("Please fill in all the fields");
+//       return;
+//     }
+   
+//     // Redirect to another page
+//     window.location.href = "http://127.0.0.1:5500/profilePage.html";
+//   });
+
+//   var userData = {
+//     "name": "John Doe",
+//     "email": "johndoe@example.com",
+//     "password": "password123"
+//   };
+
+//   // Store user data in local storage
+//   localStorage.setItem("userData", JSON.stringify(userData));
+
+//   // Retrieve user data from local storage
+//   var retrievedUser = JSON.parse(localStorage.getItem("userData"));
+
+//   // Function to update the HTML with user data
+//   var displayUserData = (user) => {
+//     var name = document.getElementById("name");
+//     var email = document.getElementById("email");
+//     var password = document.getElementById("password");
+
+//     name.innerText = user.name;
+//     email.innerText = user.email;
+//     password.innerText = user.password;
+//   };
+
+//   // Call the function to update the HTML
+//   displayUserData(retrievedUser);
+// });
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+  // var loginLink = document.getElementById("login");
+  // var signupLink = document.getElementById("signup");
+//   var loginForm = document.querySelector(".form-box.login");
+//   var signupForm =  document.getElementById("signupForm");
+//   var username = document.getElementById("username");
+//   var email = document.getElementById("email");
+//   var password = document.getElementById("password");
+//   // var signupFormElement = document.querySelector(".signup-form");
+//   // const form = document.getElementById("form");
+
+// //   // Create var user data
+// // var user = {
+// //   username: 'Mama Mo',
+// //   email: 'monique.merzoug@icloud.com',
+// //   password: '123456789',
+// // };
+
+// // loginForm.style.display = "none";
+// // signupForm.style.display = "none"; 
+
+
+// // loginLink.addEventListener("click", function(event) {
+// //   event.preventDefault();
+// //   loginForm.style.display = "block";
+// //    signupForm.style.display = "none";
+
+// //  });
+
+// //  signupLink.addEventListener("click", function(event) {
+// //    event.preventDefault();
+// //    loginForm.style.display = "none";
+// //    signupForm.style.display = "block";
+
+
+// signupForm.addEventListener("submit", function(event) {
+//   event.preventDefault();
+   
+//      var usernameInput = document.getElementById("username");
+//      var emailInput = document.getElementById("email");
+//      var passwordInput = document.getElementById("password");
+   
+//      var username = usernameInput.value;
+//      var email = emailInput.value;
+//      var password = passwordInput.value;
+   
+//      // Perform validation logic here
+//      if (username === "" || email === "" || password === "") {
+//        alert("Please fill in all the fields");
+//        return;
+//      }
+   
+//      // Redirect to another page
+//      window.location.href = "http://127.0.0.1:5500/profilePage.html";
+// });
+
+ 
+//    //add event listener to submit the form
+//    loginForm.addEventListener("submit", function(event) {
+//     event.preventDefault(); // prevent form submission
+
+
+//     var username = document.getElementById("username").value;
+//     var email = document.getElementById("email").value;
+//     var password = document.getElementById("password").value;
+
+//    // Validate the login information
+//   if (username === "your_username" && password === "your_password") {
+//     // Redirect to another page
+//     window.location.href = "another_page.html";
+//   } else {
+//     // Display an error message
+//     alert("Invalid login credentials");
+//   }
+// }); 
+
 
 // Define const user data
-var userData = {
-  "name": "John Doe",
-  "email": "johndoe@example.com",
-  "password": "password123"
-};
+// var userData = {
+//   "name": "John Doe",
+//   "email": "johndoe@example.com",
+//   "password": "password123"
+// };
 
-//  // // Store user data in local storage
- localStorage.setItem("userData", JSON.stringify(userData));
+// //  // // Store user data in local storage
+//  localStorage.setItem("userData", JSON.stringify(userData));
 
-// // Retrieve user data from local storage
-var retrievedUser = JSON.parse(localStorage.getItem("userData"));
+// // // Retrieve user data from local storage
+// var retrievedUser = JSON.parse(localStorage.getItem("userData"));
 
-// Function to update the HTML with user data
-var displayUserData = (user) => {
-  var name = document.getElementById("name");
-  var email = document.getElementById("email");
-  var password = document.getElementById("password");
-  var form = document.getElementById("form");
+// // Function to update the HTML with user data
+// var displayUserData = (user) => {
+//   var name = document.getElementById("name");
+//   var email = document.getElementById("email");
+//   var password = document.getElementById("password");
+//   var form = document.getElementById("form");
 
-  name.innerText = user.name;
-  email.innerText = user.email;
-  password.innerText = user.password;
-};
+//   name.innerText = user.name;
+//   email.innerText = user.email;
+//   password.innerText = user.password;
 
-// Call the function to update the HTML
- displayUserData(retrievedUser);
+//   // Call the function to update the HTML
+//  displayUserData(retrievedUser);
+// };
+
+
+
 
  // Function to update the HTML
- 
+
 
 //  // Save user data to local storage
 // localStorage.setItem('user', JSON.stringify(user));
