@@ -1,13 +1,3 @@
-// var searchButton = document.getElementById("search-button");
-
-
-// searchButton.addEventListener("click", function() {
-//   var searchInput = document.getElementById("search-input").value.toLowerCase();
-//   console.log(searchInput);
-//   fetchJobs(searchInput);
-//   displayCareers(response);
-//   searchInput.value = "";
-// });
 
 //"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
 var searchInput = document.getElementById("search-input");
