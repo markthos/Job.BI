@@ -1,3 +1,36 @@
+// var searchButton = document.getElementById("search-button");
+
+
+// searchButton.addEventListener("click", function() {
+//   var searchInput = document.getElementById("search-input").value.toLowerCase();
+//   console.log(searchInput);
+//   fetchJobs(searchInput);
+//   displayCareers(response);
+//   searchInput.value = "";
+// });
+
+//"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
+var searchInput = document.getElementById("search-input");
+
+  // Add an event listener for "keydown" event on the search input
+  searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      var searchTerm = searchInput.value.toLowerCase();
+      fetchJobs(searchInput);
+      displayCareers(response);
+      searchInput.value = "";
+    }
+  });
+
+  searchButton.addEventListener("click", function() {
+    var searchInputValue = searchInput.value.toLowerCase();
+    fetchJobs(searchInput);
+    displayCareers(response);
+    searchInput.value = "";
+  });
+
+
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
 SlideShow(slidePosition); // Call the function to display the current slide at the beginning
