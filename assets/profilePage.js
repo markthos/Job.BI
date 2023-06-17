@@ -35,6 +35,7 @@ function displayUser(user) {
 
 // Call the function to update the HTML
 displayUser(retrievedUser);
+var profilePicElement = document.getElementById('profilePic');
 
 // Update Profile button click event
 var updateProfileBtn = document.getElementById('updateProfileBtn');
@@ -72,7 +73,7 @@ formInputs.forEach(function(input, index) {
     // Populate the form with the user data from local storage
     nameInput.value = retrievedUser.name;
     emailInput.value = retrievedUser.email;
-    interestsInput.value = retrievedUser.interests.join(', ');
+    interestsInput.value = retrievedUser.interests.join(',');
     educationInput.value = retrievedUser.education.join(', ');
     careerGoalsInput.value = retrievedUser.careerGoals.join(', ');
 });
@@ -85,6 +86,17 @@ updateForm.addEventListener('submit', function(event) {
   retrievedUser.interests = interestsInput.value.split(',');
   retrievedUser.education = educationInput.value.split(',');
   retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+
+  var passwordInput = document.getElementById('passwordInput');
+  var confirmPasswordInput = document.getElementById('confirmPasswordInput');
+
+  var password = passwordInput.value;
+  var confirmPassword = confirmPasswordInput.value;
+
+  if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+  }
 
   var profilePicInput = document.getElementById('profilePicInput');
   var selectedFile = profilePicInput.files[0];
@@ -100,13 +112,13 @@ updateForm.addEventListener('submit', function(event) {
 
           // Update the profile picture source in the HTML
           profilePicElement.src = dataURL;
-          location.reload();
+          
       };
 
       // Read the selected file as a Data URL
       reader.readAsDataURL(selectedFile);
   }
-
+  
   localStorage.setItem('user', JSON.stringify(retrievedUser));
   displayUser(retrievedUser);
   updateFormContainer.style.display = 'none';
