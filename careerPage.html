@@ -29,7 +29,7 @@
                         </li>
                         <li>
                         <button class="button">
-                            <a href="sign-up" class="btn" id="signup">Sign Up</a>
+                            <a href="#sign-up" class="btn" id="signup">Sign Up</a>
                         </button>
                         </li>
                     <section class="search-bar">
@@ -69,6 +69,34 @@
         <span class="dots" onclick="currentSlide(1)"></span>
         <span class="dots" onclick="currentSlide(2)"></span>
         <span class="dots" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="form-container">
+        <div class="form-box login" id="loginForm">  
+           <h2>Login</h2>
+            <form>
+                <div class="input-box" id="login-form">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="person"></ion-icon></i>
+                        <input type="name" placeholder="Username" id="username" required>
+                    </div>
+                </div>
+                <div class="input-box" id="login-form">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="person"></ion-icon></i>
+                        <input type="email" placeholder="Email" id="email" required>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                        <input type="password" placeholder="Password" id="password" required>
+                    </div>
+                </div>
+                  <button type="submit" value="login" class="btn" id="loginBtn" onlick="auth()">Login</button>
+                </div>
+            </form>
+        </div>
     </div>
 
  <div class="form-container">
