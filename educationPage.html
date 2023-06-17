@@ -136,6 +136,7 @@
     <div class="icon-bar">
         <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
         <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->
+
         <a href="https://markthos.github.io/Job.BI/"><img src="./assets/honeybee.256x225.png"></a>
         <!-- <a href="https://markthos.github.io/Job.BI/"><i </a> -->
         <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
@@ -143,7 +144,21 @@
         <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
         <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->
+        <button id="signOutButton" class="btn" >Sign Out</a> </button>
     </div>
 </footer>
     <script src="./assets/educationPage.js"></script>
+    <script>
+        // Function to handle the sign-out functionality
+        function handleSignOut() {
+            // Perform any necessary sign-out logic, such as clearing session data or cookies
+
+            // Redirect to the landing page
+            window.location.href = "http://127.0.0.1:5500/landingPage.html";
+        }
+
+        // Event listener for the sign-out button
+        document.getElementById("signOutButton").addEventListener("click", handleSignOut);
+    </script>
+    
 </html>

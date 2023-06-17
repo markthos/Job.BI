@@ -81,7 +81,7 @@
                         <input type="name" placeholder="Username" id="username" required>
                     </div>
                 </div>
-                <div class="input-box" id="login-form">
+                <div class="input-box">
                     <div class="input-field">
                         <i class="icon"><ion-icon name="person"></ion-icon></i>
                         <input type="email" placeholder="Email" id="email" required>
@@ -93,6 +93,7 @@
                         <input type="password" placeholder="Password" id="password" required>
                     </div>
                 </div>
+                <div>
                   <button type="submit" value="login" class="btn" id="loginBtn" onlick="auth()">Login</button>
                 </div>
             </form>
@@ -104,7 +105,7 @@
         <h2>Create User Profile</h2>
         <div id="error message"></div>
         <form id="form" name='signup' onSubmit="return valid();" action ="profilePage.html">
-            <div class="input-box" id="signup-form">
+            <div class="input-box">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
                     <input type="text" placeholder="Create your User Name" id="usernameInput">
@@ -123,7 +124,8 @@
                 </div>
             </div>
             <div class="login-register" id="loginRegister">
-                <input type="submit" class="btn" id="submitBtn"></input>
+                <input type="submit" class="btn" id="submitBtn" value="Sign up"></input>
+            </div>
         </form>
     </div>
 </div>
@@ -141,9 +143,9 @@
         <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
         <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->
+        <button id="signOutButton" class="btn" >Sign Out </button>
     </div>
 </footer>
 <script src="./assets/careerPageResources.js"></script>
 <script src="./assets/careerPage.js"></script>
-
 </html>
