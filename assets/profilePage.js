@@ -100,13 +100,13 @@ updateForm.addEventListener('submit', function(event) {
 
           // Update the profile picture source in the HTML
           profilePicElement.src = dataURL;
-          location.reload();
+          
       };
 
       // Read the selected file as a Data URL
       reader.readAsDataURL(selectedFile);
   }
-
+  location.reload();
   localStorage.setItem('user', JSON.stringify(retrievedUser));
   displayUser(retrievedUser);
   updateFormContainer.style.display = 'none';

@@ -1,3 +1,123 @@
+//"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
+var searchInput = document.getElementById("search-input");
+var searchButton = document.getElementById("search-button");
+
+  // Add an event listener for "keydown" event on the search input
+  searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      var searchTerm = searchInput.value.toLowerCase();
+      fetchJobs(searchInput);
+      displayCareers(response);
+      searchInput.value = "";
+    }
+  });
+
+  searchButton.addEventListener("click", function() {
+    var searchInputValue = searchInput.value.toLowerCase();
+    fetchJobs(searchInput);
+    displayCareers(response);
+    searchInput.value = "";
+  });
+
+// Event listeners for the login and signup buttons
+document.getElementById("login").addEventListener("click", showLoginForm);
+document.getElementById("signup").addEventListener("click", showSignupForm);
+
+// Event listener for the login form submission
+document.getElementById("loginBtn").addEventListener("click", handleLogin);
+
+// Event listener for the signup form submission
+document.getElementById("submitBtn").addEventListener("click", handleSignup);
+
+// Function to hide the signup and login forms initially
+function hideForms() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "none";
+}
+
+// Function to show the login form
+function showLoginForm() {
+  document.getElementById("loginForm").style.display = "block";
+  document.getElementById("signupForm").style.display = "none";
+}
+
+// Function to show the signup form
+function showSignupForm() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "block";
+}
+
+// Function to validate the login credentials
+function isValidCredentials(username, password) {
+  // You can customize this function to perform your desired validation logic
+  // For example, you can check if the username and password match the stored values in localStorage
+  var storedUsername = localStorage.getItem("username");
+  var storedPassword = localStorage.getItem("password");
+
+  return username === storedUsername && password === storedPassword;
+}
+
+// Function to handle the login form submission
+function handleLogin(event) {
+  event.preventDefault(); // Prevent form submission
+
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Perform login validation and redirection
+  if (isValidCredentials(username, password)) {
+    // Store the credentials in localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    alert("You are successfully logged in");
+    window.location.href = "http://127.0.0.1:5500/profilePage.html"; // Redirect to profile page
+  } else {
+    alert("Invalid username or password");
+  }
+}
+
+// Function to handle the signup form submission
+function handleSignup(event) {
+  event.preventDefault(); // Prevent form submission
+
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  // Store the signup information in localStorage or perform any desired actions
+  localStorage.setItem("username", username);
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+
+  alert("Signup successful. You can now login with your credentials.");
+  // Redirect to another page if needed
+  window.location.href = "http://127.0.0.1:5500/profilePage.html";
+}
+
+// Function to check if the user is already logged in
+function checkLoggedIn() {
+  var loggedIn = localStorage.getItem("loggedIn");
+  if (loggedIn === "true") {
+    window.location.href = "http://127.0.0.1:5500/profilePage.html";
+  }
+}
+
+// Function to initialize the page
+function initializePage() {
+  hideForms();
+  checkLoggedIn();
+}
+
+// Event listeners for the login and signup buttons
+document.getElementById("login").addEventListener("click", showLoginForm);
+document.getElementById("signup").addEventListener("click", showSignupForm);
+
+// Call the initializePage function when the page loads
+window.addEventListener("load", initializePage);
+
+
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
 SlideShow(slidePosition); // Call the function to display the current slide at the beginning
@@ -116,3 +236,27 @@ function fetchJobs() {
 window.onload = fetchJobs;
 
 //// https://linkedin-jobs-search.p.rapidapi.com/?rapidapi-key=031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2'
+
+var searchButton = document.getElementById("search-button");
+
+var clientId = "lBdeX59qHTdt7CSdvQeIZy8H1nJlbpAbEntp2QGc";
+var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIHdch914k884aa7ZJfN0MZw9cdfFmXM5xa3aTBh0D40Lgnl8yIXAVrW5GGRKLCKz30oeTg"; 
+
+// Authenticate and get the bearer token
+var token = btoa(clientId + ":" + clientSecret);
+
+
+
+
+//  loginForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "none";
+//       signupForm.style.display = "block";
+
+//     });
+
+//   signupForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "block";
+//       signupForm.style.display = "none";
+//   });}
