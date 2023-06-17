@@ -1,4 +1,11 @@
+* {
+  color: rgb(254, 253, 253); 
+}
+
 body {
+  background-color: rgb(22, 40, 34);
+}
+.hero {
   background-image: url("https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
   background-size: cover;
 }
@@ -24,16 +31,12 @@ body {
 .header li a {
   text-decoration: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: goldenrod;
   font-size: 20px;
 }
 
 
 .button {
-  background-color: teal;
   border: none;
-  color: black;
-  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -41,7 +44,6 @@ body {
 }
 
 .profilePic {
-  border-color: aliceblue;
   border-style: solid;
   border-width: 10px;
   border-radius: 5pt;
