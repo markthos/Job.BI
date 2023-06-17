@@ -73,7 +73,7 @@ formInputs.forEach(function(input, index) {
     // Populate the form with the user data from local storage
     nameInput.value = retrievedUser.name;
     emailInput.value = retrievedUser.email;
-    interestsInput.value = retrievedUser.interests.join(', ');
+    interestsInput.value = retrievedUser.interests.join(',');
     educationInput.value = retrievedUser.education.join(', ');
     careerGoalsInput.value = retrievedUser.careerGoals.join(', ');
 });
@@ -86,6 +86,17 @@ updateForm.addEventListener('submit', function(event) {
   retrievedUser.interests = interestsInput.value.split(',');
   retrievedUser.education = educationInput.value.split(',');
   retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+
+  var passwordInput = document.getElementById('passwordInput');
+  var confirmPasswordInput = document.getElementById('confirmPasswordInput');
+
+  var password = passwordInput.value;
+  var confirmPassword = confirmPasswordInput.value;
+
+  if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+  }
 
   var profilePicInput = document.getElementById('profilePicInput');
   var selectedFile = profilePicInput.files[0];
