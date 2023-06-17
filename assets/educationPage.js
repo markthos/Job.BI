@@ -96,12 +96,24 @@ document.getElementById("signupBtn").addEventListener("click", function(event) {
 
 });
 
+//"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
+var searchInput = document.getElementById("search-input");
 
-searchButton.addEventListener("click", function() {
-  var searchInput = document.getElementById("search-input").value.toLowerCase();
-  console.log(searchInput);
-  makeApiCall(searchInput);
-});
+  // Add an event listener for "keydown" event on the search input
+  searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      var searchTerm = searchInput.value.toLowerCase();
+      makeApiCall(searchTerm);
+      searchInput.value = "";
+    }
+  });
+
+  searchButton.addEventListener("click", function() {
+    var searchInputValue = searchInput.value.toLowerCase();
+    makeApiCall(searchInputValue);
+    searchInput.value = "";
+  });
 
 
 //Makes the API request and updates the course info
