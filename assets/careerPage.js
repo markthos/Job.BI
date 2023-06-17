@@ -1,14 +1,3 @@
-// var searchButton = document.getElementById("search-button");
-
-
-// searchButton.addEventListener("click", function() {
-//   var searchInput = document.getElementById("search-input").value.toLowerCase();
-//   console.log(searchInput);
-//   fetchJobs(searchInput);
-//   displayCareers(response);
-//   searchInput.value = "";
-// });
-
 //"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
 var searchInput = document.getElementById("search-input");
 
@@ -29,7 +18,80 @@ var searchInput = document.getElementById("search-input");
     displayCareers(response);
     searchInput.value = "";
   });
-
+  
+// Login and Sign up forms and buttons
+  document.addEventListener("DOMContentLoaded", function() {
+    const loginLink = document.getElementById("login");
+    const signupLink = document.getElementById("signup");
+    const loginForm = document.querySelector(".form-box.login");
+    const signupForm =  document.querySelector(".form-box.signup");
+  
+    loginForm.style.display = "none";
+    signupForm.style.display = "none"; 
+  
+    loginLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
+    });
+  
+    signupLink.addEventListener("click", function(event) {
+      event.preventDefault();
+      loginForm.style.display = "none";
+      signupForm.style.display = "block";
+    });
+  
+    document.getElementById("loginBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "./profilePage.html";
+    });
+  
+    document.getElementById("signupBtn").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "./profilePage.html";
+    });
+  });
+  
+  document.addEventListener("DOMContentLoaded", function(){
+    const loginLink = document.getElementById("login");
+    const signupLink = document.getElementById("signup");
+    const loginForm = document.querySelector(".form-box.login");
+    const signupForm =  document.querySelector(".form-box.signup");
+  
+   loginForm.style.display = "none";
+    signupForm.style.display = "none"; 
+  });
+  
+  loginLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    loginForm.style.display = "block";
+    signupForm.style.display = "none";
+  });
+  
+  signupLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    loginForm.style.display = "none";
+    signupForm.style.display = "block";
+  });
+  
+  
+  // Add an event listener to the login button
+  document.getElementById("loginBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Perform login validation and other necessary checks here
+    // If login is successful, redirect the user to the profile page
+    window.location.href = "./profilePage.html";
+  });
+  
+  // Add an event listener to the login button
+  document.getElementById("signupBtn").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Perform login validation and other necessary checks here
+    // If login is successful, redirect the user to the profile page
+    window.location.href = "./profilePage.html";
+  });
 
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
@@ -158,78 +220,7 @@ var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIH
 // Authenticate and get the bearer token
 var token = btoa(clientId + ":" + clientSecret);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const loginLink = document.getElementById("login");
-  const signupLink = document.getElementById("signup");
-  const loginForm = document.querySelector(".form-box.login");
-  const signupForm =  document.querySelector(".form-box.signup");
 
-  loginForm.style.display = "none";
-  signupForm.style.display = "none"; 
-
-  loginLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    loginForm.style.display = "block";
-    signupForm.style.display = "none";
-  });
-
-  signupLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    loginForm.style.display = "none";
-    signupForm.style.display = "block";
-  });
-
-  document.getElementById("loginBtn").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "./profilePage.html";
-  });
-
-  document.getElementById("signupBtn").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "./profilePage.html";
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function(){
-  const loginLink = document.getElementById("login");
-  const signupLink = document.getElementById("signup");
-  const loginForm = document.querySelector(".form-box.login");
-  const signupForm =  document.querySelector(".form-box.signup");
-
- loginForm.style.display = "none";
-  signupForm.style.display = "none"; 
-});
-
-loginLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "block";
-  signupForm.style.display = "none";
-});
-
-signupLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "none";
-  signupForm.style.display = "block";
-});
-
-
-// Add an event listener to the login button
-document.getElementById("loginBtn").addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Perform login validation and other necessary checks here
-  // If login is successful, redirect the user to the profile page
-  window.location.href = "./profilePage.html";
-});
-
-// Add an event listener to the login button
-document.getElementById("signupBtn").addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Perform login validation and other necessary checks here
-  // If login is successful, redirect the user to the profile page
-  window.location.href = "./profilePage.html";
-});
 
 
 //  loginForm.addEventListener("click", function(event) {
