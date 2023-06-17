@@ -116,3 +116,98 @@ function fetchJobs() {
 window.onload = fetchJobs;
 
 //// https://linkedin-jobs-search.p.rapidapi.com/?rapidapi-key=031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2'
+
+var searchButton = document.getElementById("search-button");
+
+var clientId = "lBdeX59qHTdt7CSdvQeIZy8H1nJlbpAbEntp2QGc";
+var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIHdch914k884aa7ZJfN0MZw9cdfFmXM5xa3aTBh0D40Lgnl8yIXAVrW5GGRKLCKz30oeTg"; 
+
+// Authenticate and get the bearer token
+var token = btoa(clientId + ":" + clientSecret);
+
+document.addEventListener("DOMContentLoaded", function() {
+  const loginLink = document.getElementById("login");
+  const signupLink = document.getElementById("signup");
+  const loginForm = document.querySelector(".form-box.login");
+  const signupForm =  document.querySelector(".form-box.signup");
+
+  loginForm.style.display = "none";
+  signupForm.style.display = "none"; 
+
+  loginLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    loginForm.style.display = "block";
+    signupForm.style.display = "none";
+  });
+
+  signupLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    loginForm.style.display = "none";
+    signupForm.style.display = "block";
+  });
+
+  document.getElementById("loginBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "./profilePage.html";
+  });
+
+  document.getElementById("signupBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "./profilePage.html";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const loginLink = document.getElementById("login");
+  const signupLink = document.getElementById("signup");
+  const loginForm = document.querySelector(".form-box.login");
+  const signupForm =  document.querySelector(".form-box.signup");
+
+ loginForm.style.display = "none";
+  signupForm.style.display = "none"; 
+});
+
+loginLink.addEventListener("click", function(event) {
+  event.preventDefault();
+  loginForm.style.display = "block";
+  signupForm.style.display = "none";
+});
+
+signupLink.addEventListener("click", function(event) {
+  event.preventDefault();
+  loginForm.style.display = "none";
+  signupForm.style.display = "block";
+});
+
+
+// Add an event listener to the login button
+document.getElementById("loginBtn").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Perform login validation and other necessary checks here
+  // If login is successful, redirect the user to the profile page
+  window.location.href = "./profilePage.html";
+});
+
+// Add an event listener to the login button
+document.getElementById("signupBtn").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Perform login validation and other necessary checks here
+  // If login is successful, redirect the user to the profile page
+  window.location.href = "./profilePage.html";
+});
+
+
+//  loginForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "none";
+//       signupForm.style.display = "block";
+
+//     });
+
+//   signupForm.addEventListener("click", function(event) {
+//       event.preventDefault();
+//       loginForm.style.display = "block";
+//       signupForm.style.display = "none";
+//   });}
