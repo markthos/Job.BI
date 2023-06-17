@@ -20,7 +20,6 @@ var searchInput = document.getElementById("search-input");
     searchInput.value = "";
   });
 
-
 // Carousel
 var slidePosition = 1; // Variable to keep track of the current slide
 SlideShow(slidePosition); // Call the function to display the current slide at the beginning
@@ -85,7 +84,6 @@ function displayCareers(response) {
   }
   var j;
   var circles = document.querySelector(".dots"); // Get all dots
-
 }
 
 // Initial display of careers
