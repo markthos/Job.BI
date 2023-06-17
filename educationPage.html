@@ -98,7 +98,35 @@
         </div>
     </div>
  </div>
-
+ 
+ <div class="form-container">
+    <div class="form-box signup" id="signupForm">
+        <h2>Create User Profile</h2>
+        <div id="error message"></div>
+        <form id="form" name='signup' onSubmit="return valid();" action ="profilePage.html">
+            <div class="input-box" id="signup-form">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="person"></ion-icon></i>
+                    <input type="text" placeholder="Create your User Name" id="usernameInput">
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="email" placeholder="Email" id="emailInput" required>
+                </div>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                    <input type="password" placeholder="Select your Password" id="passwordInput" required>
+                </div>
+            </div>
+            <div class="login-register" id="loginRegister">
+                <input type="submit" class="btn" id="submitBtn"></input>
+        </form>
+    </div>
+</div>
 //
    <!--Icon Bar-->
    <footer>
