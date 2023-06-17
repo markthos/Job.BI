@@ -35,6 +35,7 @@ function displayUser(user) {
 
 // Call the function to update the HTML
 displayUser(retrievedUser);
+var profilePicElement = document.getElementById('profilePic');
 
 // Update Profile button click event
 var updateProfileBtn = document.getElementById('updateProfileBtn');
@@ -106,7 +107,7 @@ updateForm.addEventListener('submit', function(event) {
       // Read the selected file as a Data URL
       reader.readAsDataURL(selectedFile);
   }
-  location.reload();
+  
   localStorage.setItem('user', JSON.stringify(retrievedUser));
   displayUser(retrievedUser);
   updateFormContainer.style.display = 'none';
