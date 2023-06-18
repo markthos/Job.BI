@@ -13,7 +13,7 @@
   background-color: transparent !important;
   border: none !important;
   margin-left: 2%;
-  color: rgb(22, 40, 34);
+  color: rgb(22, 40, 34) !important;
   margin-bottom: 8%;
 }
 
@@ -44,6 +44,9 @@ body {
 
 .btn-login{
   padding: 5px 25px !important;
+}
+.profilePageHeader{
+  margin-left: 20% !important;
 }
 
 .educationPageHeader{

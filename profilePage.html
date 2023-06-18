@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job.BI-profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./assets/reset.css"/>
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="header">
-        <h3><a href="./landingPage.html">Job.BI</a></h3>
-        <box>
-            <nav>
+    <header class="header">
+        <img src="./assets/images/job-bi-logo.png" class="logo">
+        <box class="profilePageHeader" id="header-background">
+            <nav class="header-background">
                 <ul>
                     <li>
                         <a href="./educationPage.html">Education</a>
                     </li>
+
                     <li>
                         <a href="./careerPage.html">Careers</a>
                     </li>
+
                     <li>
-                        <a href="https://www.myperfectresume.com/build-resume?utm_source=google&utm_medium=sem&utm_campaign=109191550&utm_term=ai%20resume%20builder&network=g&device=c&adposition=&adgroupid=146931621986&placement=&gclid=CjwKCAjwkLCkBhA9EiwAka9QRhOuMrW2Wy5OFsqYAuebBADvvNsKRfKufFK9J_sdTsjgmsFbORJDvBoCDoUQAvD_BwE">Resume Builder</a>
+                        <a
+                            href="https://www.myperfectresume.com/build-resume?utm_source=google&utm_medium=sem&utm_campaign=109191550&utm_term=ai%20resume%20builder&network=g&device=c&adposition=&adgroupid=146931621986&placement=&gclid=CjwKCAjwkLCkBhA9EiwAka9QRhOuMrW2Wy5OFsqYAuebBADvvNsKRfKufFK9J_sdTsjgmsFbORJDvBoCDoUQAvD_BwE">Resume
+                            Builder</a>
                     </li>
-                    <button id="updateProfileBtn" class="btn">Edit Profile</button>
+
+                    <li>
+                        <button class="button">
+                            <a id="updateProfileBtn" class="btn">Edit Profile</a>
+                        </button>
+                    </li>
+
                     <div id="updateFormContainer" style="display: none;">
                         <h3>Update Profile</h3>
                         <form id="updateForm">
@@ -56,20 +67,30 @@
                             <label for="confirmPasswordInput">Confirm Password</label>
                             <input type="password" id="confirmPasswordInput" placeholder="Password Confirmation">
                             <br>
-                            <button type="submit" class="btn">Update</button>
-                            <button type="button" id="skipBtn" class="btn">Skip</button>
+                        <button class="button">
+                            <a type="submit" class="btn">Update</a>
+                            <a type="button" id="skipBtn" class="btn">Skip</a>
+                        </button class="button">
                         </form>
                     </div>
                 </ul>
             </nav>
         </box>
 
+    </header>
+
+    <section></section>
+
+    <div class="header">
     </div>
-    <div>
+
+    <div class="content">
+
         <section class="profile">
             <section id="user">
                 <h1 id="user-profile">Personal Profile</h1>
-                <img src="./assets/images/pexels-cottonbro-studio-6626882.jpg" alt="profilePic" class= "profilePic" id="profilePic">
+                <img src="./assets/images/pexels-cottonbro-studio-6626882.jpg" alt="profilePic" class="profilePic"
+                    id="profilePic">
                 <section id="name"></section>
                 <section id="email"></section>
                 <section id="interests"></section>
@@ -100,36 +121,38 @@
         </section>-->
 
     </div>
-   <!--Icon Bar-->
-   <footer>
-    <h4>Follow Us!</h4>
-    <div class="icon-bar">
-        <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
-        <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->
-        <!-- <a href="https://markthos.github.io/Job.BI "><img src="./assets/honeybee.256x225.png"></a>
+    <!--Icon Bar-->
+    <footer>
+        <h4>Follow Us!</h4>
+        <div class="icon-bar">
+            <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
+            <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->
+            <!-- <a href="https://markthos.github.io/Job.BI "><img src="./assets/honeybee.256x225.png"></a>
         <!-- <a href="https://markthos.github.io/Job.BI/"><i </a> -->
-       <!--<a href="https://markthos.github.io/Job.BI/"><i class="fa fa-github"></i></a> -->
-        <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
-        <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
-        <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
-        <button id="signOutButton" class="btn" >Sign Out </button>
-    </div>
-</footer>
-<script src="./assets/profilePage.js"></script>
+            <!--<a href="https://markthos.github.io/Job.BI/"><i class="fa fa-github"></i></a> -->
+            <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
+            <button class="button">
+            <a id="signOutButton" class="btn">Sign Out </a>
+        </button>
+        </div>
+    </footer>
+    <script src="./assets/profilePage.js"></script>
 
-<script>
-    // Function to handle the sign-out functionality
-    function handleSignOut() {
-        // Perform any necessary sign-out logic, such as clearing session data or cookies
+    <script>
+        // Function to handle the sign-out functionality
+        function handleSignOut() {
+            // Perform any necessary sign-out logic, such as clearing session data or cookies
 
-        // Redirect to the landing page
-        window.location.href = "http://127.0.0.1:5500/landingPage.html";
-    }
+            // Redirect to the landing page
+            window.location.href = "http://127.0.0.1:5500/landingPage.html";
+        }
 
-    // Event listener for the sign-out button
-    document.getElementById("signOutButton").addEventListener("click", handleSignOut);
-</script>
+        // Event listener for the sign-out button
+        document.getElementById("signOutButton").addEventListener("click", handleSignOut);
+    </script>
 
 </body>
 
