@@ -6,6 +6,8 @@ var user = {
     interests: [''],
     education: [''],
     careerGoals: [''],
+    username: '',
+    password: '',
 };
 
 // Save user data to local storage
