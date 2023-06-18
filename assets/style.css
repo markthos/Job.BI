@@ -73,3 +73,15 @@ position: relative;
 top: 50%;
 left: 40%;
 }*/
+
+/* CSS to keep the Affiliate School logos small so they don't overwhelm the page */
+.box {
+  display: flex;
+}
+
+#logo-image {
+  display: block;
+  width: 1.6in;
+  height: 1.2in;
+  margin-right: 10px; /* Optional: Add some spacing between the logos */
+}
