@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <div class="header">
-        <h3>Job.BI</h3>
-        <box>
-            <nav>
+    <header class="header">
+        <img src="./assets/images/job-bi-logo.png" class="logo">
+        <box class="educationPageHeader" id="header-background">
+            <nav class="header-background">
                 <ul>
                     <li>
                         <a href="./careerPage.html">Career Postings</a>
@@ -28,27 +28,28 @@
                         <button class="button">
                             <a href="#log-in" class="btn" id="login">Log In</a>
                         </button>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                         <button class="button">
                             <a href="sign-up" class="btn" id="signup">Sign Up</a>
                         </button>
-                        </li>
-                    <section class="search-bar">
-                        <input type="text" id="search-input" placeholder="Search Courses..."/>
-                        <button id = "search-button">Search</button>
-                    </section>
+                    </li>
+                    <li>
+                        <section class="search-bar">
+                            <input type="text" id="search-input" placeholder="Search Courses..." />
+                            <button class="btn" id="search-button">Search</button>
+                        </section>
+                    </li>
                 </ul>
             </nav>
         </box>
-
-    </div>
+    </header>
 
     <section></section>
 
-    <div class="header">   
+    <div class="header">
     </div>
-    
+
     <div class="content">
 
         <section class="Containers">
@@ -78,86 +79,91 @@
         <span class="dots" onclick="currentSlide(2)"></span>
         <span class="dots" onclick="currentSlide(3)"></span>
     </div>
-
-    
+  
 <!--Login Form Section-->  
+    <div class="form-container">
+        <div class="form-box login" id="loginForm"> 
+            <h2>Login</h2>
+            <form>
+                <div class="input-box" id="login-form">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="person"></ion-icon></i>
+                          <input type="name" placeholder="Username" id="username" required>
+                </div>
+            </div>
+                <div class="input-box">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                        <input type="password" placeholder="Password" id="password" required>
+                    </div>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" id="loginBtn">Login</button>
+            </form>
+            <div class="login-register">
+                <p>Don't have an account? <a href="#" class="signup-link" id="signupLink">Sign up</a></p>
+            </div>
 
-<div class="form-container">
-    <div class="form-box login" id="loginForm">  
-       <h2>Login</h2>
-        <form>
-            <div class="input-box" id="login-form">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="name" placeholder="Username" id="username" required>
-                </div>
-            </div>
-            <!--<div class="input-box" id="login-form">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="email" placeholder="Email" id="email" required>
-                </div>
-            </div>-->
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Password" id="password" required>
-                </div>
-            </div>
-              <button type="submit" value="login" class="btn" id="loginBtn" onlick="auth()">Login</button>
+               <button type="submit" value="login" class="btn" id="loginBtn" onlick="auth()">Login</button>
             </div>
         </form>
     </div>
 </div>
- 
+
 <!--Sign Up Form Section -->  
+    <div class="form-container">
+        <div class="form-box signup" id="signupForm">
+            <h2>Create User Profile</h2>
+            <div id="error message"></div>
+            <form id="form" name='signup' onSubmit="return valid();" action="profilePage.html">
+                <div class="input-box" id="signup-form">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="person"></ion-icon></i>
+                        <input type="text" placeholder="Create your User Name" id="usernameInput">
+                    </div>
+                </div>
+              
+                <div class="input-box">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                        <input type="email" placeholder="Email" id="emailInput" required>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <div class="input-field">
+                        <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                        <input type="password" placeholder="Select your Password" id="passwordInput" required>
+                    </div>
+                </div>
 
-<div class="form-container">
-    <div class="form-box signup" id="signupForm">
-        <h2>Create User Profile</h2>
-        <div id="error message"></div>
-        <form id="form" name='signup' onSubmit="return valid();" action ="profilePage.html">
-            <div class="input-box" id="signup-form">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="text" placeholder="Create your User Name" id="usernameInput">
+                <div class="login-register" id="loginRegister">
+                    <input type="submit" class="btn" id="submitBtn"></input>
                 </div>
-            </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="email" placeholder="Email" id="emailInput" required>
-                </div>
-            </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Select your Password" id="passwordInput" required>
-                </div>
-            </div>
-            <div class="login-register" id="loginRegister">
-                <input type="submit" class="btn" id="submitBtn"></input>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-   <!--Icon Bar-->
-   <footer>
-    <h4>Follow Us!</h4>
-    <div class="icon-bar">
-        <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
-        <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->
+  
+    <!--Icon Bar-->
+    <footer>
+        <h4>Follow Us!</h4>
+        <div class="icon-bar">
+            <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
+            <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->
 
-        <!-- <a href="https://markthos.github.io/Job.BI/"><img src="./assets/honeybee.256x225.png"></a> -->
-        <!-- <a href="https://markthos.github.io/Job.BI/"><i </a> -->
-        <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
-        <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
-        <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
-        <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->
-        <button id="signOutButton" class="btn" >Sign Out</a> </button>
-    </div>
-</footer>
+            <!-- <a href="https://markthos.github.io/Job.BI/"><img src="./assets/honeybee.256x225.png"></a> -->
+            <!-- <a href="https://markthos.github.io/Job.BI/"><i </a> -->
+            <a href="mailto:job.bicontact@gmail.com "><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/job-bi/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://instagram.com/job.bi7"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/markthos/Job.BI/blob/main/"><i class="fa fa-github"></i></a>
+            <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->
+            <button id="signOutButton" class="btn">Sign Out</a> </button>
+        </div>
+    </footer>
     <script src="./assets/educationPage.js"></script>
     <script>
         // Function to handle the sign-out functionality
@@ -171,5 +177,5 @@
         // Event listener for the sign-out button
         document.getElementById("signOutButton").addEventListener("click", handleSignOut);
     </script>
-    
+
 </html>

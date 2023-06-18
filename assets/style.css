@@ -14,6 +14,7 @@
   border: none !important;
   margin-left: 2%;
   color: rgb(22, 40, 34);
+  margin-bottom: 8%;
 }
 
 nav.header-background{
@@ -21,23 +22,32 @@ nav.header-background{
   box-shadow: none;
 }
 body {
-  background-color: rgb(22, 40, 34);
+  background-color: #162822;
 }
-
 
 .hero {
   background-image: url("https://cdn.midjourney.com/d83fda48-dc45-4f1d-93b1-010c2266e0d8/0_2.webp");
   background-size: cover;
 }
 
+.logo{
+  width: 25%;
+  height: 25%;
+  margin-right: 15%;
+ padding: 1%;
+}
 .btn {
-  background-color: rgb(25, 100, 93) !important;
+  background-color: #19645d !important;
   padding: 0px 25px !important;
   border-radius: 10% !important;
 }
 
 .btn-login{
   padding: 5px 25px !important;
+}
+
+.educationPageHeader{
+  margin-left: 20% !important;
 }
 .header ul {
   list-style-type: none;
