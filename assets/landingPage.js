@@ -56,7 +56,7 @@ function handleLogin(event) {
   }
 }
 
-// Function to handle the signup form submission
+ // Function to handle the signup form submission
 function handleSignup(event) {
   event.preventDefault(); // Prevent form submission
 
@@ -69,7 +69,7 @@ function handleSignup(event) {
   localStorage.setItem("email", email);
   localStorage.setItem("password", password);
 
-  alert("Signup successful. You can now login ");
+  alert("Signup successful. You can now login with your credentials.");
   // Redirect to another page if needed
   window.location.href = "http://127.0.0.1:5500/profilePage.html";
 }
@@ -95,38 +95,24 @@ document.getElementById("signup").addEventListener("click", showSignupForm);
 // Call the initializePage function when the page loads
 window.addEventListener("load", initializePage);
 
-// Function to clear the input fields in the login form
-function clearLoginForm() {
-  document.getElementById('username').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('password').value = '';
+
+ // Function to handle the sign-out functionality
+ function handleSignOut() {
+  // Perform any necessary sign-out logic, such as clearing session data or cookies
+
+  // Redirect to the landing page
+  window.location.href = "http://127.0.0.1:5500/landingPage.html";
 }
 
-// Function to clear the input fields in the signup form
-function clearSignupForm() {
-  document.getElementById('usernameInput').value = '';
-  document.getElementById('emailInput').value = '';
-  document.getElementById('passwordInput').value = '';
+// Event listener for the sign-out button
+document.getElementById("signOutButton").addEventListener("click", handleSignOut);
+
+
+// Function to initialize the page
+function initializePage() {
+  hideForms();
+  checkLoggedIn();
 }
-
-// // Get the input elements
-// var textInput = document.getElementById('textInput');
-// var submitButton = document.getElementById('submitButton');
-
-// Function to clear the text input
-function clearTextInput() {
-  textInput.value = '';
-}
-
-// Function to handle the submit event
-function handleSubmit() {
-  // Your submit logic goes here
-  console.log('Submitted:', textInput.value);
-  clearTextInput();
-}
-
-// Add event listener for button click
-submitButton.addEventListener('click', handleSubmit);
 
 // Add event listener for "Enter" key press
 textInput.addEventListener('keydown', function(event) {
