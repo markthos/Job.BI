@@ -107,4 +107,17 @@ left: 40%;
   width: 1.6in;
   height: 1.2in;
   margin-right: 10px; /* Optional: Add some spacing between the logos */
+} 
+
+
+/* CSS to keep the Affiliate Organizations logos small so they don't overwhelm the page */
+.box {
+  display: flex;
+} 
+
+#company-logo {
+  display: block;
+  width: 1.6in;
+  height: 1.2in;
+  margin-right: 10px; /* Optional: Add some spacing between the logos */
 }
