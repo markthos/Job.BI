@@ -49,7 +49,7 @@ function handleLogin(event) {
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
 
-    alert("You are successfully logged in");
+  
     window.location.href = "http://127.0.0.1:5500/profilePage.html"; // Redirect to profile page
   } 
 }
@@ -67,7 +67,7 @@ function handleSignup(event) {
   localStorage.setItem("email", email);
   localStorage.setItem("password", password);
 
-  alert("Signup successful. You can now login with your credentials.");
+
   // Redirect to another page if needed
   window.location.href = "http://127.0.0.1:5500/profilePage.html";
 }
