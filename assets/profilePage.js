@@ -138,3 +138,31 @@ function getQuotesList(e){
         document.getElementById("quote").innerText = data[ind].text + " ~~~"+data[ind].author
       });
 }
+
+document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+  
+    // Get the input values
+    var username = document.getElementById("usernameInput").value;
+    var email = document.getElementById("emailInput").value;
+    var password = document.getElementById("passwordInput").value;
+  
+    // Create an object to store user data
+    var user = {
+      username: username,
+      email: email,
+      password: password
+    };
+  
+    // Store the user data in localStorage
+    localStorage.setItem("userData", JSON.stringify(user));
+  
+    // Clear the form fields
+    document.getElementById("usernameInput").value = "";
+    document.getElementById("emailInput").value = "";
+    document.getElementById("passwordInput").value = "";
+  
+    // Redirect to the profile page or perform any other necessary action
+    window.location.href = "profilePage.html";
+  });
+  
