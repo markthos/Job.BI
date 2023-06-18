@@ -1,6 +1,6 @@
 // Mock user data
 var user = {
-    profilePic: 'assets\images\pexels-cottonbro-studio-6626882.jpg',
+    profilePic: '',
     name: '',
     email: '',
     interests: [''],
@@ -88,17 +88,6 @@ updateForm.addEventListener('submit', function(event) {
   retrievedUser.interests = interestsInput.value.split(',');
   retrievedUser.education = educationInput.value.split(',');
   retrievedUser.careerGoals = careerGoalsInput.value.split(',');
-
-  var passwordInput = document.getElementById('passwordInput');
-  var confirmPasswordInput = document.getElementById('confirmPasswordInput');
-
-  var password = passwordInput.value;
-  var confirmPassword = confirmPasswordInput.value;
-
-  if (password !== confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-  }
 
   var profilePicInput = document.getElementById('profilePicInput');
   var selectedFile = profilePicInput.files[0];
