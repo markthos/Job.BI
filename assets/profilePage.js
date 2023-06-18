@@ -29,7 +29,7 @@ function displayUser(user) {
     interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
     educationElement.textContent = 'Education: ' + user.education.join(', ');
     careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
-    profilePicElement.src = localStorage.getItem('profilePic') || '/assets/images/pexels-cottonbro-studio-6626882.jpg';
+    profilePicElement.src = localStorage.getItem('profilePic') || '/assets/images/';
 
 }
 
