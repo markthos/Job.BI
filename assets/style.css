@@ -2,28 +2,46 @@
   /* color: rgb(254, 253, 253);  */
 }
 .header {
-  background-color: transparent;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
+#header-background,
+.header-background{
+  /* background-color: rgb(22, 40, 34) !important; */
+  background-color: transparent !important;
+  border: none !important;
+  margin-left: 2%;
+  color: rgb(22, 40, 34);
+}
 
+nav.header-background{
+  border: none !important;
+  box-shadow: none;
+}
 body {
   background-color: rgb(22, 40, 34);
 }
+
+
 .hero {
   background-image: url("https://cdn.midjourney.com/d83fda48-dc45-4f1d-93b1-010c2266e0d8/0_2.webp");
   background-size: cover;
 }
 
 .btn {
-
+  background-color: rgb(25, 100, 93) !important;
+  padding: 0px 25px !important;
+  border-radius: 10% !important;
 }
 
+.btn-login{
+  padding: 5px 25px !important;
+}
 .header ul {
   list-style-type: none;
-  margin: 0;
+  margin-right: 5px;
   padding: 0;
 }
 
@@ -36,6 +54,9 @@ body {
   text-decoration: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 
@@ -44,7 +65,9 @@ body {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important;
 }
 
 .profilePic {
