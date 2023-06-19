@@ -201,10 +201,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // If login is successful, redirect the user to the profile page
     var emailInput = document.getElementById("loginEmail");
     var passwordInput = document.getElementById("loginPassword");
-    var username = document.getElementById("loginUsername");
+    var usernameInput = document.getElementById("loginUsername");
 
     var email = emailInput.value.trim();
-    var username = emailInput.value.trim();
+    var username = usernameInput.value.trim();
     var password = passwordInput.value.trim();
 
     // Retrieve user data from local storage
@@ -243,6 +243,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
       localStorage.setItem("user", JSON.stringify(user));
       window.location.href = "http://127.0.0.1:5500/profilePage.html";
+      
+      // Clear the form fields on clicking the signup button
+      nameInput.value = "";
+      emailInput.value = "";
+      passwordInput.value = "";
+      confirmPasswordInput.value = "";
+
     } else {
       console.log("Passwords do not match. Please try again.");
     }
