@@ -221,6 +221,9 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     // Perform signup validation and other necessary checks here
     // If signup is successful, store user data in local storage and redirect the user to the profile page
+    // Clear the form fields on clicking the signup button
+    
+
     var nameInput = document.getElementById("signupName");
     var emailInput = document.getElementById("signupEmail");
     var passwordInput = document.getElementById("signupPassword");
