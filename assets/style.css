@@ -63,7 +63,17 @@ body {
  bottom: 75px;
  margin-left: 60%;
 }
-
+#quote {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  background-color: #19645d ;
+  color: rgb(254, 253, 253);
+  border-radius: 10px;
+  width: 40%;
+  position: relative;
+ bottom: 75px;
+ margin-left: 60%;
+}
 .profilePageHeader{
   margin-left: 20% !important;
 }
