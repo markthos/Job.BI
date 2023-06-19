@@ -1,10 +1,13 @@
 * {
   /* color: rgb(254, 253, 253);  */
 }
+
+
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
 }
 
 #header-background,
@@ -12,9 +15,6 @@
   /* background-color: rgb(22, 40, 34) !important; */
   background-color: transparent !important;
   border: none !important;
-  margin-left: 2%;
-  color: rgb(22, 40, 34) !important;
-  margin-bottom: 8%;
 }
 
 nav.header-background{
@@ -34,9 +34,12 @@ body {
 
 .logo{
   width: 25%;
-  height: 25%;
-  margin-right: 15%;
+  height: auto;
  padding: 1%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 999;
 }
 
 .btn {
@@ -51,6 +54,13 @@ body {
   font-family: 'Nunito', sans-serif;
   padding: 5px 25px !important;
 }
+.content-container {
+  width: 40%;
+  margin-left: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
 .custom-card{
   font-family: 'Headland One', serif;
@@ -58,21 +68,82 @@ body {
   background-color: #162822;
   color: rgb(254, 253, 253);
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   position: relative;
- bottom: 75px;
- margin-left: 60%;
+  margin-bottom: 20px;
+
 }
+
+.explore {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.explore-button{
+  width: 40%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto; /* This will allow breaking very long words */
+}
+
+@media (max-width: 1405px) {
+  .explore-button {
+    font-size: 12px;  /* adjust this value as needed */
+    padding: 10px;  /* adjust this value as needed */
+  }
+}
+
+@media (max-width: 1200px) {
+  .explore-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .explore-button {
+    font-size: 10px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .explore-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12px;
+
+  }
+
+  .custom-card {
+    font-size: 24px;
+    margin-left: 0;
+  }
+
+  .content-container {
+    width: 90%;
+  }
+
+  #quote {
+    font-size: 16px;
+  }
+}
+
+
 #quote {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   background-color: #19645d ;
   color: rgb(254, 253, 253);
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   position: relative;
- bottom: 75px;
- margin-left: 60%;
+ margin-top: 20px;
 }
 .profilePageHeader{
   margin-left: 20% !important;
@@ -81,24 +152,26 @@ body {
 .educationPageHeader{
   margin-left: 20% !important;
 }
+
 .header ul {
   list-style-type: none;
+  display: flex;
   margin-right: 3px;
   padding: 0;
+  justify-content: end;
+  
 }
 
 .header li {
   display: inline-block;
-  margin-left: 5px;
+  margin-right: 10px;
 }
 
-.header li a {
+.btn-login {
   font-family: 'Nunito', sans-serif;
-  font-size: 25px;
-  margin: 0;
-  padding: 0;
-color: #162822;
-font-weight: bold;
+  font-size: 20px;
+  color: #162822 !important;
+  font-weight: bold !important;
 
 }
 
@@ -107,7 +180,7 @@ font-weight: bold;
   border: none;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  /* font-size: 16px; */
   margin: 0;
   padding: 0;
   background-color: transparent !important;
@@ -159,4 +232,26 @@ left: 40%;
   width: 1.5in;
   height: 1in;  /* Made these slightly shorter because if not the Apple looks weird */
   margin-right: 8px; 
+}
+
+footer {
+  font-family: 'Nunito', sans-serif;
+  text-align: center; /* Center the content */
+  color: white; /* Make the font color white */
+}
+
+.icon-bar {
+  font-size: 2em; /* Make the icons larger */
+}
+
+.icon-bar a {
+  color: white; /* Make the icons white */
+}
+
+.icon-bar a:hover {
+  color: #ddd; /* Change color on hover, if desired */
+}
+
+h4 {
+  font-size: 20px; /* Make the font smaller */
 }
