@@ -85,7 +85,7 @@ var searchitem = document.getElementById ("get-quote")
 searchitem.addEventListener ("click",getQuotesList)
 
 window.onload = getQuotesList
-
+setInterval(getQuotesList, 15000); // Change quote every 15 seconds
 function getQuotesList(e){
 
   fetch("https://type.fit/api/quotes")
