@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job.BI-landing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-     <!-- Add icon library -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link type="text/css" rel="stylesheet" href="./assets/reset.css"/>
-     <link type="text/css" rel="stylesheet" href="./assets/style.css"/> 
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./assets/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
 </head>
 
-<!--Header section-->     
+<!--Header section-->
 
 <body class="hero">
     <header class="header">
@@ -47,36 +48,36 @@
 </body>
 
 
- 
-<!--Education and Career Page Buttons-->  
- 
+
+<!--Education and Career Page Buttons-->
+
 <section class="content">
     <div class="content-container">
-    <p class="card-panel custom-card" id="motto">
-        A one-stop platform to begin the career you have always dreamed of!
-    </p>
-    <section class="explore">
-        <button class="button explore-button">
-            <a href="./educationPage.html" class="btn">Courses</a>
-        </button>
-        <button class="button explore-button">
-            <a href="./careerPage.html" class="btn">Careers</a>
-        </button>
-    </section>
-    <section class="card-panel custom-card" id="quote">
-        <article id="quote-content">
-            <!-- Your quote content goes here. -->
-        </article>
-        <button id="get-quote">BI Inspired!</button>
-    </section>
-</div>
+        <p class="card-panel custom-card" id="motto">
+            A one-stop platform to begin the career you have always dreamed of!
+        </p>
+        <section class="explore">
+            <button class="button explore-button">
+                <a href="./educationPage.html" class="btn">Courses</a>
+            </button>
+            <button class="button explore-button">
+                <a href="./careerPage.html" class="btn">Careers</a>
+            </button>
+        </section>
+        <section class="card-panel custom-card" id="quote">
+            <article id="quote-content">
+                <!-- Your quote content goes here. -->
+            </article>
+            <button id="get-quote">BI Inspired!</button>
+        </section>
+    </div>
 </section>
 
-<!--Login Form Section-->  
+<!--Login Form Section-->
 
 <div class="form-container">
-    <div class="form-box login" id="loginForm">  
-       <h2>Login</h2>
+    <div class="form-box login" id="loginForm">
+        <h2>Login</h2>
         <form>
             <div class="input-box" id="login-form">
                 <div class="input-field">
@@ -96,20 +97,20 @@
                     <input type="password" placeholder="Password" id="password" required>
                 </div>
             </div>
-              <button type="submit" value="login" class="btn" id="loginBtn" onclick=auth()>Login</button>
-            </div>
-        </form>
+            <button type="submit" value="login" class="btn" id="loginBtn" onclick=auth()>Login</button>
     </div>
+    </form>
+</div>
 </div>
 
 
-<!--Sign Up Form Section -->  
+<!--Sign Up Form Section -->
 
- <div class="form-container">
+<div class="form-container">
     <div class="form-box signup" id="signupForm">
         <h2>Create User Profile</h2>
         <div id="error message"></div>
-        <form id="form" name='signup' onSubmit="return valid();" action ="profilePage.html">
+        <form id="form" name='signup' onSubmit="return valid();" action="profilePage.html">
             <div class="input-box" id="signup-form">
                 <div class="input-field">
                     <i class="icon"><ion-icon name="person"></ion-icon></i>
@@ -134,8 +135,8 @@
     </div>
 </div>
 
-   <!--Icon Bar-->
-   <footer>
+<!--Icon Bar-->
+<footer>
     <h4>Follow Us!</h4>
     <div class="icon-bar">
         <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
@@ -147,8 +148,8 @@
         <a href="mailto:job.bicontact@gmail.com"><i class="fa fa-envelope"></i></a>
         <a href="https://instagram.com/job.bi7?igshid=NGExMmI2YTkyZg=="><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/markthos/Job.BI.git"><i class="fa fa-github"></i></a>
-        <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->                            
-    </div> 
+        <!-- <a href="https://twitter.com/your_twitter_handle"><i class="fa fa-twitter"></i></a> -->
+    </div>
 </footer>
 
 <!-- Ionicons scripts -->
@@ -156,4 +157,5 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="./assets/landingPage.js"></script>
 </body>
+
 </html>
