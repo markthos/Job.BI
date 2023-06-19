@@ -62,9 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("signupBtn").addEventListener("click", function(event) {
     event.preventDefault();
+  
     // Perform signup validation and other necessary checks here
-    // If signup is successful, store user data in local storage and redirect the user to the profile page
-    // Clear the form fields on clicking the signup button
   
     var nameInput = document.getElementById("signupName");
     var emailInput = document.getElementById("signupEmail");
@@ -81,8 +80,11 @@ document.addEventListener("DOMContentLoaded", function() {
       username: email, // Use the email as the username, you can modify this according to your requirements
     };
   
-    localStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "http://127.0.0.1:5500/profilePage.html";
+    // Encode the user object as a query parameter in the URL
+    var queryString = "?user=" + encodeURIComponent(JSON.stringify(user));
+  
+    // Redirect the user to the profile page with the query parameter
+    window.location.href = "http://127.0.0.1:5500/profilePage.html" + queryString;
   
     // Clear the form fields on clicking the signup button
     nameInput.value = "";
@@ -90,4 +92,3 @@ document.addEventListener("DOMContentLoaded", function() {
     passwordInput.value = "";
   });
 });
-

@@ -1,21 +1,5 @@
 // Wrap the code in the DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // // Mock user data
-    // var user = {
-    //   profilePic: '',
-    //   name: '',
-    //   email: '',
-    //   interests: [''],
-    //   education: [''],
-    //   careerGoals: [''],
-    //   username: '',
-    //   password: '',
-    // };
-  
-    // // Save user data to local storage if it doesn't exist
-    // if (!localStorage.getItem('user')) {
-    //   localStorage.setItem('user', JSON.stringify(user));
-    // }
   
     // Retrieve user data from local storage
     var retrievedUser = JSON.parse(localStorage.getItem('user'));
