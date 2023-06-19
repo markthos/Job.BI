@@ -140,27 +140,23 @@ top: 50%;
 left: 40%;
 }*/
 
-/* CSS to keep the Affiliate School logos small so they don't overwhelm the page */
+
+/* CSS to keep the Affiliate School and Company logos small so they don't overwhelm the page */
+
 .box {
   display: flex;
 }
 
-#logo-image {
+#logo-image{
   display: block;
-  width: 1.6in;
-  height: 1.2in;
-  margin-right: 10px; /* Optional: Add some spacing between the logos */
-} 
-
-
-/* CSS to keep the Affiliate Organizations logos small so they don't overwhelm the page */
-.box {
-  display: flex;
-} 
+  width: 1.5in;
+  height: 1.1in;
+  margin-right: 8px; /* Optional: Add some spacing between the logos */
+}
 
 #company-logo {
   display: block;
-  width: 1.6in;
-  height: 1.2in;
-  margin-right: 10px; /* Optional: Add some spacing between the logos */
+  width: 1.5in;
+  height: 1in;  /* Made these slightly shorter because if not the Apple looks weird */
+  margin-right: 8px; 
 }
