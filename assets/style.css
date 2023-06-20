@@ -260,8 +260,8 @@ h4 {
   align-items: flex-end;
   margin-top: 10%;
 }
-
-.carousel {
+.Containers,
+.carousel-container {
   width: 90%;
   height: 300px; /* Adjust the height as needed */
   position: relative;
@@ -275,34 +275,21 @@ h4 {
   background-color: #19645d !important;
 }
 
-/* .carousel {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  position: relative;
-} */
-
-/* .carousel-item {
-  flex: 0 0 auto;
-  width: 100%;
-} */
-
-.carousel-item {
-  display: none;
+#job-info,
+#course-info {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
-/* .carousel-item img {
-  width: 100%;
-  height: auto;
-} */
 
 .carousel-item img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover; /* Adjust the image positioning and sizing as needed */
 }
 .carousel-control {
@@ -318,24 +305,45 @@ h4 {
   z-index: 1;
 }
 
-.carousel-control.prev {
-  left: 10px;
-}
-
-.carousel-control.next {
-  right: 10px;
-}
-
-.carousel-item h3 {
+.course-item h3 {
   font-size: 24px;
   color: white;
   margin-top: 10px;
 }
 
-.carousel-item p {
+.course-item p {
   font-size: 16px;
   color: white;
   margin-top: 5px;
+}
+
+.forward {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 50%;
+  z-index: 1;
+  
+  left: 50%;
+}
+
+.Back{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 50%;
+  z-index: 1; 
+  right: 50%;
 }
 
 h2{
