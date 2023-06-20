@@ -152,7 +152,8 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   var i;
-  var slides = document.getElementsByClassName("Containers"); // Get all slides
+  var slides = document.querySelectorAll(".course-item");
+  // var slides = document.getElementsByClassName("Containers"); // Get all slides
   var circles = document.getElementsByClassName("dots"); // Get all dots
   if (n > slides.length) {slidePosition = 1} // If the current slide number is greater than the total number of slides, reset it to 1
   if (n < 1) {slidePosition = slides.length} // If the current slide number is less than 1, set it to the total number of slides
@@ -163,13 +164,13 @@ function SlideShow(n) {
       circles[i].className = circles[i].className.replace(" enable", ""); // Remove the "enable" class from all dots
   }
   slides[slidePosition-1].style.display = "block"; // Show the current slide
-  circles[slidePosition-1].className += " enable"; // Add the "enable" class to the current dot
+  // circles[slidePosition-1].className += " enable"; // Add the "enable" class to the current dot
 }
 
 // Function to display courses
 function displayCourses(courses) {
-  var courseList = document.getElementById('course-info'); // Get the course list element
-  courseList.innerHTML = '';
+  var carouselContainer = document.querySelector('.carousel-container'); // Get the course list element
+  carouselContainer.innerHTML = '';
 
   courses.forEach(course => {
       var courseItem = document.createElement('div'); // Create a new div for each course
@@ -179,8 +180,9 @@ function displayCourses(courses) {
           <p><strong>Platform:</strong> ${course.platform}</p>
           <p><strong>Description:</strong> ${course.description}</p>
       `; // Add the course information to the div
-      courseList.appendChild(courseItem); // Add the div to the course list
+      carouselContainer.appendChild(courseItem); // Add the div to the course list
   });
+  currentSlide(1);
 }
 
 // Initial display of courses

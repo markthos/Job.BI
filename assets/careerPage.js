@@ -131,7 +131,7 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   var i;
-  var slides = response;
+  var slides = document.querySelectorAll(".job-item");
   var circles = document.querySelector(".dots"); // Get all dots
   if (n > slides.length) { slidePosition = 1 } // If the current slide number is greater than the total number of slides, reset it to 1
   if (n < 1) { slidePosition = slides.length } // If the current slide number is less than 1, set it to the total number of slides
@@ -142,13 +142,16 @@ function SlideShow(n) {
     circles[i].className = circles[i].className.replace(" enable", ""); // Remove the "enable" class from all dots
   }
   slides[slidePosition - 1].style.display = "block"; // Show the current slide
-  circles[slidePosition - 1].className += " enable"; // Add the "enable" class to the current dot
+//   circles[slidePosition - 1].className += " enable"; // Add the "enable" class to the current dot
 }
 
 //function to display careers from the careerPageResources file
 function displayCareers(response) {
-  var careerList = document.getElementById("job-info"); // Get the career list element
-  careerList.innerHTML = ''; // Clear the existing content
+  // var careerList = document.getElementById("job-info"); // Get the career list element
+  // careerList.innerHTML = ''; // Clear the existing content
+
+  var containers = document.querySelector(".Containers");
+  containers.innerHTML=("");
 
   // for (var key in response) {
   //   if (response.hasOwnProperty(key)) {
@@ -168,14 +171,18 @@ function displayCareers(response) {
   for (let i = 0; i < response.length; i++) {
     var jobItem = document.createElement("div");
     jobItem.classList.add('job-item');
+    jobItem.style.display="none";
+    jobItem.dataset.slide= i;
     jobItem.innerHTML= `
         <h3>${response[i].job_url}</h3>
         <p>${response[i].linkedin_job_url_cleaned}</p>
         <p>${response[i].company_name}</p>
         <a href="${response[i].company_url}">Company Link</a>
       `;
-      careerList.appendChild(jobItem);
+      containers.appendChild(jobItem);
   }
+
+  currentSlide(1);
   var j;
   var circles = document.querySelector(".dots"); // Get all dots
 
@@ -232,14 +239,6 @@ function fetchJobs() {
 window.onload = fetchJobs;
 
 //// https://linkedin-jobs-search.p.rapidapi.com/?rapidapi-key=031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2'
-
-var searchButton = document.getElementById("search-button");
-
-var clientId = "lBdeX59qHTdt7CSdvQeIZy8H1nJlbpAbEntp2QGc";
-var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIHdch914k884aa7ZJfN0MZw9cdfFmXM5xa3aTBh0D40Lgnl8yIXAVrW5GGRKLCKz30oeTg"; 
-
-// Authenticate and get the bearer token
-var token = btoa(clientId + ":" + clientSecret);
 
 
 //  loginForm.addEventListener("click", function(event) {
