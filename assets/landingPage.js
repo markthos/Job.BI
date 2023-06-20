@@ -14,7 +14,7 @@ function getQuotesList(e) {
       console.log(data);
       console.log(data.length);
       var ind = Math.floor(Math.random() * data.length);
-      document.getElementById("quote").innerText = data[ind].text + " ~~~" + data[ind].author;
+      document.getElementById("quote").innerText = data[ind].text + " ~~~~~ " + data[ind].author;
     });
 }
 
