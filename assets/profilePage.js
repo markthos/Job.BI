@@ -46,7 +46,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
     var profilePicElement = document.getElementById('profilePic');
 
-    
+    // Open the modal when the "Edit Profile" button is clicked
+document.getElementById("updateProfileBtn").addEventListener("click", function() {
+  document.getElementById("updateFormModal").style.display = "block";
+});
+
+// Close the modal when the user clicks on the close button or outside the modal
+document.addEventListener("click", function(event) {
+  var modal = document.getElementById("updateFormModal");
+  if (event.target == modal || event.target.classList.contains("close")) {
+    modal.style.display = "none";
+  }
+});
+
     // Update Profile button click event
     updateProfileBtn.addEventListener('click', function(event) {
       event.preventDefault(); // Prevent the default behavior of the button
