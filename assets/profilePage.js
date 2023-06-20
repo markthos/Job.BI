@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (userParam) {
       var user = JSON.parse(decodeURIComponent(userParam));
 
+      // Store the user object in local storage
+      localStorage.setItem('user', JSON.stringify(user));
+
       //Now you can access the user object and its properties
       console.log(user.name);
       console.log(user.email);
@@ -32,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
       nameElement.textContent = 'Name: ' + user.name;
       emailElement.textContent = 'Email: ' + user.email;
-      interestsElement.textContent = 'Interests: ' + user.interests.join(', ');
-      educationElement.textContent = 'Education: ' + user.education.join(', ');
-      careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals.join(', ');
+      interestsElement.textContent = 'Interests: ' + user.interests;
+      educationElement.textContent = 'Education: ' + user.education;
+      careerGoalsElement.textContent = 'Career Goals: ' + user.careerGoals;
       profilePicElement.src = localStorage.getItem('profilePic') || '/assets/images/';
     }
   
@@ -73,16 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
     updateForm.addEventListener('submit', function(event) {
       event.preventDefault();
   
-    retrievedUser.name = nameInput.value;
-    retrievedUser.email = emailInput.value;
-    retrievedUser.interests = interestsInput.value.split(',');
-    retrievedUser.education = educationInput.value.split(',');
-    retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+      retrievedUser.name = nameInput.value;
+      retrievedUser.email = emailInput.value;
+      retrievedUser.interests = interestsInput.value.split(',');
+      retrievedUser.education = educationInput.value.split(',');
+      retrievedUser.careerGoals = careerGoalsInput.value.split(',');
 
-    var profilePicInput = document.getElementById('profilePicInput');
-    var selectedFile = profilePicInput.files[0];
-    // if loop to check if a file was selected by the user
-    if (selectedFile) {
+      var profilePicInput = document.getElementById('profilePicInput');
+      var selectedFile = profilePicInput.files[0];
+      // if loop to check if a file was selected by the user
+      if (selectedFile) {
         var reader = new FileReader();
 
         reader.onload = function(event) {
@@ -96,14 +99,14 @@ document.addEventListener('DOMContentLoaded', function() {
           
         };
 
-      // Read the selected file as a Data URL
-      reader.readAsDataURL(selectedFile);
-    }
-  
-    localStorage.setItem('user', JSON.stringify(retrievedUser));
-    displayUser(retrievedUser);
-    updateFormContainer.style.display = 'none';
-  
+        // Read the selected file as a Data URL
+        reader.readAsDataURL(selectedFile);
+      }
+      // Store the updated user object in local storage
+      localStorage.setItem('user', JSON.stringify(retrievedUser));
+      
+      displayUser(retrievedUser);
+      updateFormContainer.style.display = 'none';
     });
   });
   

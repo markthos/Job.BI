@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Perform signup validation and other necessary checks here
   
     var usernameInput = document.getElementById("usernameInput");
-    var emailInput = document.getElementById("signupEmail");
-    var passwordInput = document.getElementById("signupPassword");
+    var emailInput = document.getElementById("emailInput");
+    var passwordInput = document.getElementById("passwordInput");
   
     var username = usernameInput.value.trim();
     var email = emailInput.value.trim();
