@@ -6,19 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job.BI-Careers</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./assets/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <!-- Add icon library -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./assets/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
+
 </head>
 
 <body>
@@ -28,10 +27,10 @@
             <nav class="header-background">
                 <ul>
                     <li>
-                        <a href="./landingPage.html">Home</a>
+                        <a href="./landingPage.html" class="btn-login-edu">Home</a>
                     </li>
                     <li>
-                        <a href="./educationPage.html">Educational Resources</a>
+                        <a href="./educationPage.html" class="btn-login-edu">Educational Resources</a>
                     </li>
                     <li>
                         <button class="button">
@@ -43,15 +42,17 @@
                             <a href="#sign-up" class="btn" id="signup">Sign Up</a>
                         </button>
                     </li>
-                    <section class="search-bar">
-                        <input type="text" id="search-input" placeholder="Search Careers..." />
-                        <button id="search-button">Search</button>
-                    </section>
                 </ul>
             </nav>
         </box>
     </header>
 
+    <div class="search-bar-container right-align">
+    <section class="search-bar">
+        <input type="text" id="search-input" placeholder="Search Careers..." />
+        <button id="search-button">Search</button>
+    </section>
+</div>
     <section></section>
 
     <div class="header">
@@ -72,84 +73,108 @@
     </div>
 
     <!--Affiliate Organizations Section-->
+    <div class="affiliateOrganizations"></div>
     <h2>Affiliate Organizations</h2>
-    <section class="box">
-        <section class="affiliate-organizations"> Affiliate Organizations</section>
-        <section id="company-info"> Company Placeholder</section>
-        <a href="https://www.linkedin.com/"><img src="./assets/images/LI-In-Bug.png" alt="LinkedIn Logo" id="company-logo"></a>
-        <a href="https://www.apple.com/"><img src="./assets/images/Apple.png" alt="Apple Logo" id="company-logo"></a>
-        <a href="https://www.ebay.com/"><img src="./assets/images/ebay.png" alt="ebay Logo" id="company-logo"></a>
-        <a href="https://www.intel.com/"><img src="./assets/images/IntelLogo.png" alt="Intel Logo" id="company-logo"></a>
-        <a href="https://www.cisco.com/"><img src="./assets/images/cisco-logo.png" alt="Cisco Logo" id="company-logo"></a>
-        <a href="https://www.meta.com/"><img src="./assets/images/meta-logo.png" alt="Meta Logo" id="company-logo"></a>
-    </section>
-
-    <div style="text-align:center">
-        <span class="dots" onclick="currentSlide(1)"></span>
-        <span class="dots" onclick="currentSlide(2)"></span>
-        <span class="dots" onclick="currentSlide(3)"></span>
+    <div class="box">
+        <div class="row">
+            <div class="col s2">
+                <a href="https://www.linkedin.com/"><img src="./assets/images/LI-In-Bug.png" alt="LinkedIn Logo"
+                        id="company-logo"></a>
+            </div>
+            <div class="col s2">
+                <a href="https://www.apple.com/"><img src="./assets/images/Apple.png" alt="Apple Logo"
+                        id="company-logo"></a>
+            </div>
+            <div class="col s2">
+                <a href="https://www.ebay.com/"><img src="./assets/images/ebay.png" alt="ebay Logo"
+                        id="company-logo"></a>
+            </div>
+            <div class="col s2">
+                <a href="https://www.intel.com/"><img src="./assets/images/IntelLogo.png" alt="Intel Logo"
+                        id="company-logo"></a>
+            </div>
+            <div class="col s2">
+                <a href="https://www.cisco.com/"><img src="./assets/images/cisco-logo.png" alt="Cisco Logo"
+                        id="company-logo"></a>
+            </div>
+            <div class="col s2">
+                <a href="https://www.meta.com/"><img src="./assets/images/meta-logo.png" alt="Meta Logo"
+                        id="company-logo"></a>
+            </div>
+        </div>
     </div>
+    
 
-    <!--Login Form Section-->
-    <!--Login Form Section-->
+            <div style="text-align:center">
+                <span class="dots" onclick="currentSlide(1)"></span>
+                <span class="dots" onclick="currentSlide(2)"></span>
+                <span class="dots" onclick="currentSlide(3)"></span>
+            </div>
+            
+            
 
-<div class="form-container">
-    <div class="form-box login" id="loginForm">
-        <h2>Login</h2>
-        <form>
-            <div class="input-box" id="login-form">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="name" placeholder="Username" id="username" required>
+            <!--Login Form Section-->
+            <!--Login Form Section-->
+
+            <div class="form-container">
+                <div class="form-box login" id="loginForm">
+                    <h2>Login</h2>
+                    <form>
+                        <div class="input-box" id="login-form">
+                            <div class="input-field">
+                                <i class="icon"><ion-icon name="person"></ion-icon></i>
+                                <input type="name" placeholder="Username" id="username" required>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div class="input-field">
+                                <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                                <input type="password" placeholder="Password" id="password" required>
+                            </div>
+                        </div>
+                        <button type="submit" value="login" class="btn" id="loginBtn" onclick="auth()">Login</button>
+                    </form>
                 </div>
             </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Password" id="password" required>
-                </div>
-            </div>
-            <button type="submit" value="login" class="btn" id="loginBtn" onclick="auth()">Login</button>
-        </form>
-    </div>
-</div>
 
 
-<!--Sign Up Form Section -->
+            <!--Sign Up Form Section -->
 
-<div class="form-container">
-    <div class="form-box signup" id="signupForm">
-        <h2>Create User Profile</h2>
-        <div id="error message"></div>
-        <form id="form" name='signup' onSubmit="return valid();" action="profilePage.html">
-            <div class="input-box" id="signup-form">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="person"></ion-icon></i>
-                    <input type="text" placeholder="Create your User Name" id="usernameInput">
+            <div class="form-container">
+                <div class="form-box signup" id="signupForm">
+                    <h2>Create User Profile</h2>
+                    <div id="error message"></div>
+                    <form id="form" name='signup' onSubmit="return valid();" action="profilePage.html">
+                        <div class="input-box" id="signup-form">
+                            <div class="input-field">
+                                <i class="icon"><ion-icon name="person"></ion-icon></i>
+                                <input type="text" placeholder="Create your User Name" id="usernameInput">
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div class="input-field">
+                                <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                                <input type="email" placeholder="Email" id="emailInput" required>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <div class="input-field">
+                                <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
+                                <input type="password" placeholder="Select your Password" id="passwordInput" required>
+                            </div>
+                        </div>
+                        <div class="login-register" id="loginRegister">
+                            <button type="submit" value="signup" class="btn" id="signupBtn">Sign Up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="email" placeholder="Email" id="emailInput" required>
-                </div>
-            </div>
-            <div class="input-box">
-                <div class="input-field">
-                    <i class="icon"><ion-icon name="lock-closed"></ion-icon></i>
-                    <input type="password" placeholder="Select your Password" id="passwordInput" required>
-                </div>
-            </div>
-            <div class="login-register" id="loginRegister">
-            <button type="submit" value="signup" class="btn" id="signupBtn">Sign Up</button>
-            </div>
-        </form>
-    </div>
-</div>
 </body>
+
+
 <!--Icon Bar-->
 <footer>
-    <h4>Follow Us!</h4>
+    <h4 class="h4-edu-pg">Follow Us!</h4>
     <div class="icon-bar">
         <!-- <a href="#header"><i class="fa fa-home"></i></a> -->
         <!-- <a href="#contact-me"><i class="fa fa-handshake-o"></i></a> -->

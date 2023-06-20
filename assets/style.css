@@ -1,38 +1,20 @@
+/* Common Styles */
 * {
   /* color: rgb(254, 253, 253);  */
-}
-
-#header-background,
-.header-background{
-  /* background-color: rgb(22, 40, 34) !important; */
-  background-color: transparent !important;
-  border: none !important;
-}
-
-nav.header-background{
-  border: none !important;
-  box-shadow: none;
 }
 
 body {
   background-color: #162822;
 }
 
-.hero {
-  background-image: url("https://cdn.midjourney.com/f275ec51-b206-419d-bb00-98ba756fef1c/0_3.webp");
-  background-size: cover;
-  height: 500px;
-  background-position: center -275px;
-}
-
-.logo{
+.logo {
   width: 35%;
   height: auto;
- padding: 1%;
- position: absolute;
- top: 0;
- left: 0;
- z-index: 999;
+  padding: 1%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .btn {
@@ -43,18 +25,31 @@ body {
   color: rgb(254, 253, 253) !important;
 }
 
-
-
-.btn-login-edu{
+.btn-login-career,
+.btn-login-edu {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: rgb(254, 253, 253) !important;
   font-weight: bold !important;
 }
 
-.search-bar{
+.search-bar {
   color: rgb(254, 253, 253) !important;
 }
+
+
+#header-background,
+.careerPageHeader,
+.profilePageHeader {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+nav.header-background {
+  border: none !important;
+  box-shadow: none;
+}
+
 .content-container {
   width: 40%;
   margin-left: 60%;
@@ -64,7 +59,7 @@ body {
   margin-top: 10%;
 }
 
-.custom-card{
+.custom-card {
   font-family: 'Headland One', serif;
   font-size: 36px;
   background-color: #162822;
@@ -73,7 +68,6 @@ body {
   width: 100%;
   position: relative;
   margin-bottom: 20px;
-
 }
 
 .explore {
@@ -84,17 +78,17 @@ body {
   margin-top: 5px;
 }
 
-.explore-button{
+.explore-button {
   width: 40%;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto; /* This will allow breaking very long words */
+  hyphens: auto;
 }
 
 @media (max-width: 1405px) {
   .explore-button {
-    font-size: 12px;  /* adjust this value as needed */
-    padding: 10px;  /* adjust this value as needed */
+    font-size: 12px;
+    padding: 10px;
   }
 }
 
@@ -119,7 +113,6 @@ body {
     justify-content: center;
     flex-direction: column;
     font-size: 12px;
-
   }
 
   .custom-card {
@@ -136,120 +129,15 @@ body {
   }
 }
 
-
 #quote {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
-  background-color: #19645d ;
+  background-color: #19645d;
   color: rgb(254, 253, 253);
   border-radius: 10px;
   width: 100%;
   position: relative;
- margin-top: 20px;
-}
-.careerPageHeader,
-.profilePageHeader{
-  margin-left: 20% !important;
-}
-
-/* CSS Header ul's */
-.header ul {
-  list-style-type: none;
-  display: flex;
-  margin-right: 3px;
-  padding: 0;
-  justify-content: end;
-  
-}
-/* CSS li's */
-.header li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-/* CSS Login/Signup button in the header */
-.btn-login {
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  color: #162822 !important;
-  font-weight: bold !important;
-}
-
-/* CSS Header Buttons */
-.button {
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  /* font-size: 16px; */
-  margin: 0;
-  padding: 0;
-  background-color: transparent !important;
-}
-
-.profilePic {
-  border-style: solid;
-  border-width: 10px;
-  border-radius: 5pt;
-  width: 25%;
-  height: 25%;
-}
-
-/* CSS to keep the Affiliate School and Company logos small so they don't overwhelm the page */
-
-.box {
-  display: flex;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Center the items vertically */
-  flex-wrap: wrap; /* Allow the items to wrap to the next line */
-  width: 90%;
-  height: 250px; /* Adjust the height as needed */
-  position: relative;
-  overflow: hidden;
-  border:2px solid #fff;
-  box-sizing: border-box;
-  margin-left: auto; /* Center horizontally */
-  margin-right: auto; /* Center horizontally */
-  border-radius: 10px;
-  background-color: #19645d !important;
-}
-
-.logo-image {
-  display: block;
-  width: 85%;
-  height: auto;
-  margin-right: 8px; /* Add some spacing between the logos */
-justify-content: space-around;
-padding-top: 25%;
-
-}
-
-#company-logo {
-  display: inline-block
-  width: 1.5in;
-  height: 1in;  /* Made these slightly shorter because if not the Apple looks weird */
-  margin-right: 8px; 
-}
-
-footer {
-  font-family: 'Nunito', sans-serif;
-  text-align: center; /* Center the content */
-  color: white; /* Make the font color white */
-}
-
-.icon-bar {
-  font-size: 2em; /* Make the icons larger */
-}
-
-.icon-bar a {
-  color: white; /* Make the icons white */
-}
-
-.icon-bar a:hover {
-  color: #ddd; /* Change color on hover, if desired */
-}
-
-h4 {
-  font-size: 20px; /* Make the font smaller */
+  margin-top: 20px;
 }
 
 .search-bar-container {
@@ -260,16 +148,17 @@ h4 {
   align-items: flex-end;
   margin-top: 10%;
 }
+
 .Containers,
 .carousel-container {
   width: 90%;
-  height: 300px; /* Adjust the height as needed */
+  height: 300px;
   position: relative;
   overflow: hidden;
-  border:2px solid #fff;
+  border: 2px solid #fff;
   box-sizing: border-box;
-  margin-left: auto; /* Center horizontally */
-  margin-right: auto; /* Center horizontally */
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
   border-radius: 10px;
   background-color: #19645d !important;
@@ -290,8 +179,9 @@ h4 {
 .carousel-item img {
   width: 80%;
   height: 80%;
-  object-fit: cover; /* Adjust the image positioning and sizing as needed */
+  object-fit: cover;
 }
+
 .carousel-control {
   position: absolute;
   top: 50%;
@@ -317,6 +207,21 @@ h4 {
   margin-top: 5px;
 }
 
+.Back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 50%;
+  z-index: 1;
+  left: 10px;
+  right: unset;
+}
+
 .forward {
   position: absolute;
   top: 50%;
@@ -328,31 +233,179 @@ h4 {
   padding: 8px 12px;
   border-radius: 50%;
   z-index: 1;
-  
-  left: 50%;
+  right: 10px;
+  left: unset;
 }
 
-.Back{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 8px 12px;
-  border-radius: 50%;
-  z-index: 1; 
-  right: 50%;
-}
-
-h2{
-  color: white !important; 
- text-align: center;
- font-family: 'Nunito', sans-serif;
- font-size: 24px;
+h2 {
+  color: white !important;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
 }
 
 h4 {
   margin-top: 200px;
 }
+
+h2 {
+  color: white !important;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.logo-image {
+  display: block;
+  width: 85%;
+  height: auto;
+  margin-right: 8px;
+  justify-content: space-around;
+  padding-top: 25%;
+}
+
+#company-logo {
+  display: inline-block;
+  width: 1.5in;
+  height: 1in;
+  margin-right: 8px;
+}
+
+footer {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.icon-bar {
+  font-size: 2em;
+}
+
+.icon-bar a {
+  color: white;
+}
+
+.icon-bar a:hover {
+  color: #ddd;
+}
+
+/* First Page Specific Styles */
+
+#header-background,
+.header-background {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.header ul {
+  list-style-type: none;
+  display: flex;
+  margin-right: 3px;
+  padding: 0;
+  justify-content: end;
+}
+
+.header li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn-login {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #162822 !important;
+  font-weight: bold !important;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+  background-color: transparent !important;
+}
+
+.profilePic {
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 5pt;
+  width: 25%;
+  height: 25%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background-color: #19645d !important;
+}
+
+h4 {
+  font-size: 20px;
+  margin-top: 200px;
+}
+
+/* Second Page Specific Styles */
+
+.search-bar {
+  color: rgb(254, 253, 253) !important;
+}
+
+.hero {
+  background-image: url("https://cdn.midjourney.com/f275ec51-b206-419d-bb00-98ba756fef1c/0_3.webp");
+  background-size: cover;
+  height: 500px;
+  background-position: center -275px;
+}
+
+h1 {
+  font-family: 'Headland One', serif;
+  font-size: 72px;
+  color: rgb(254, 253, 253);
+  text-align: center;
+  margin-top: 150px;
+}
+
+#quote {
+  font-size: 36px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer p {
+  margin-bottom: 5px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
