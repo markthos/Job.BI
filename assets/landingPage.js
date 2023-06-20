@@ -65,19 +65,18 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Perform signup validation and other necessary checks here
   
-    var nameInput = document.getElementById("signupName");
+    var usernameInput = document.getElementById("usernameInput");
     var emailInput = document.getElementById("signupEmail");
     var passwordInput = document.getElementById("signupPassword");
   
-    var name = nameInput.value.trim();
+    var username = usernameInput.value.trim();
     var email = emailInput.value.trim();
     var password = passwordInput.value.trim();
   
     var user = {
-      name: name,
+      username: username,
       email: email,
       password: password,
-      username: email, // Use the email as the username, you can modify this according to your requirements
     };
   
     // Encode the user object as a query parameter in the URL
@@ -87,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "http://127.0.0.1:5500/profilePage.html" + queryString;
   
     // Clear the form fields on clicking the signup button
-    nameInput.value = "";
+    usernameInput.value = "";
     emailInput.value = "";
     passwordInput.value = "";
   });

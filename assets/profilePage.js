@@ -1,5 +1,22 @@
 // Wrap the code in the DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the user object from the query parameters
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var userParam = urlParams.get('user');
+
+    if (userParam) {
+      var user = JSON.parse(decodeURIComponent(userParam));
+
+      //Now you can access the user object and its properties
+      console.log(user.name);
+      console.log(user.email);
+      console.log(user.password);
+      console.log(user.username);
+    }
+    else {
+      console.log('Userobject not found in query parameters');
+    }
   
     // Retrieve user data from local storage
     var retrievedUser = JSON.parse(localStorage.getItem('user'));
