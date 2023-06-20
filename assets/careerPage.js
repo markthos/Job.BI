@@ -97,7 +97,7 @@ var searchButton = document.getElementById("search-button");
   });
 
 // Call the initializePage function when the page loads
-window.addEventListener("load", initializePage);
+// window.addEventListener("load", initializePage);
 
 
  // Function to handle the sign-out functionality
