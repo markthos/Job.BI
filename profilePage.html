@@ -46,9 +46,12 @@
                         </button>
                     </li>
 
-                    <div id="updateFormContainer" style="display: none;">
+                    <div id="updateFormModal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            
                         <h3>Update Profile</h3>
-                        <form id="updateForm">
+                        <form id="updateForm" class="updateProfileForm modal-form">
                             <label for="nameInput">Name</label>
                             <input type="text" id="nameInput" placeholder="Your name">
                             <br>
@@ -78,6 +81,7 @@
                             <a type="button" id="skipBtn" class="btn">Skip</a>
                         </button class="button">
                         </form>
+                    </div>
                     </div>
                 </ul>
             </nav>
