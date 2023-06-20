@@ -28,6 +28,31 @@ document.addEventListener("DOMContentLoaded", function () {
     signupForm.style.display = "block";
   });
 
+  function showModalMessage(message) {
+    var modal = document.createElement("div");
+    modal.textContent = message;
+    modal.style.position = "fixed";
+    modal.style.top = "50%";
+    modal.style.left = "50%";
+    modal.style.transform = "translate(-50%, -50%)";
+    modal.style.backgroundColor = "#fff";
+    modal.style.padding = "20px";
+    modal.style.border = "1px solid #ccc";
+    modal.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.2)";
+    modal.style.zIndex = "9999";
+  
+    var closeButton = document.createElement("button");
+    closeButton.textContent = "Close";
+    closeButton.addEventListener("click", function () {
+      modal.remove();
+    });
+  
+    modal.appendChild(closeButton);
+  
+    document.body.appendChild(modal);
+  }
+
+
   function auth() {
     var usernameInput = document.getElementById("username");
     var passwordInput = document.getElementById("password");
@@ -43,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "profilePage.html";
     } else {
       console.log("Invalid username or password. Please try again.");
+      showModalMessage("Invalid username or password. Please try again.");
     }
   }
 
