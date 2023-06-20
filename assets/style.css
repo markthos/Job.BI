@@ -244,18 +244,17 @@ h2 {
   font-size: 24px;
 }
 
-h4 {
-  margin-top: 200px;
-}
-
-h2 {
+h2, .affOrg {
   color: white !important;
   text-align: center;
   font-family: 'Nunito', sans-serif;
   font-size: 24px;
+  margin-top: 150px;
 }
 
+.followCareerPg,
 h4 {
+  margin-top: 150px;
   font-size: 20px;
 }
 

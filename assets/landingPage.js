@@ -18,24 +18,6 @@ function getQuotesList(e) {
     });
 }
 
-function auth() {
-  var usernameInput = document.getElementById("username");
-  var passwordInput = document.getElementById("password");
-
-  var username = usernameInput.value.trim();
-  var password = passwordInput.value.trim();
-
-  // Retrieve user data from local storage
-  var user = JSON.parse(localStorage.getItem("user"));
-
-  if (user && user.username === username && user.password === password) {
-    // Redirect the user to the profile page
-    window.location.href = "profilePage.html";
-  } else {
-    console.log("Invalid username or password. Please try again.");
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   var loginLink = document.getElementById("login");
   var signupLink = document.getElementById("signup");
@@ -57,7 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
     signupForm.style.display = "block";
   });
 
+  function auth() {
+    var usernameInput = document.getElementById("username");
+    var passwordInput = document.getElementById("password");
 
+    var username = usernameInput.value.trim();
+    var password = passwordInput.value.trim();
+
+    // Retrieve user data from local storage
+    var user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && user.username === username && user.password === password) {
+      // Redirect the user to the profile page
+      window.location.href = "profilePage.html";
+    } else {
+      console.log("Invalid username or password. Please try again.");
+    }
+  }
 
   document.getElementById("loginBtn").addEventListener("click", function (event) {
     event.preventDefault();

@@ -71,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
     });
-
+  
+    // Update Profile form submit event
 // Update Profile form submit event
 var updateForm = document.getElementById('updateForm');
 updateForm.addEventListener('submit', function(event) {
@@ -90,9 +91,7 @@ updateForm.addEventListener('submit', function(event) {
     email: emailInput.value.trim() !== '' ? emailInput.value : retrievedUser.email,
     interests: interestsInput.value.trim() !== '' ? interestsInput.value.split(',') : retrievedUser.interests,
     education: educationInput.value.trim() !== '' ? educationInput.value.split(',') : retrievedUser.education,
-    careerGoals: careerGoalsInput.value.trim() !== '' ? careerGoalsInput.value.split(',') : retrievedUser.careerGoals,
-    username: retrievedUser.username, // Keep the username the same
-    password: retrievedUser.password // Keep the password the same
+    careerGoals: careerGoalsInput.value.trim() !== '' ? careerGoalsInput.value.split(',') : retrievedUser.careerGoals
   };
 
   var profilePicInput = document.getElementById('profilePicInput');
