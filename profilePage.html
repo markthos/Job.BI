@@ -3,12 +3,21 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job.BI-profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./assets/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./assets/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
@@ -18,16 +27,16 @@
             <nav class="header-background">
                 <ul>
                     <li>
-                        <a href="./educationPage.html">Education</a>
+                        <a href="./educationPage.html" class="btn-login-edu">Education</a>
                     </li>
 
                     <li>
-                        <a href="./careerPage.html">Careers</a>
+                        <a href="./careerPage.html" class="btn-login-edu">Careers</a>
                     </li>
 
                     <li>
                         <a
-                            href="https://www.myperfectresume.com/build-resume?utm_source=google&utm_medium=sem&utm_campaign=109191550&utm_term=ai%20resume%20builder&network=g&device=c&adposition=&adgroupid=146931621986&placement=&gclid=CjwKCAjwkLCkBhA9EiwAka9QRhOuMrW2Wy5OFsqYAuebBADvvNsKRfKufFK9J_sdTsjgmsFbORJDvBoCDoUQAvD_BwE">Resume
+                            href="https://www.myperfectresume.com/build-resume?utm_source=google&utm_medium=sem&utm_campaign=109191550&utm_term=ai%20resume%20builder&network=g&device=c&adposition=&adgroupid=146931621986&placement=&gclid=CjwKCAjwkLCkBhA9EiwAka9QRhOuMrW2Wy5OFsqYAuebBADvvNsKRfKufFK9J_sdTsjgmsFbORJDvBoCDoUQAvD_BwE" class="btn-login-edu">Resume
                             Builder</a>
                     </li>
 
@@ -83,18 +92,35 @@
 
     <div class="content">
 
-        <section class="profile">
+        <!-- <section class="card-panel custom-card-profile" >
             <section id="user">
-                <h1 id="user-profile">Personal Profile</h1>
+                <h1 id="user-profile"></h1>
                 <img src="./assets/images/pexels-cottonbro-studio-6626882.jpg" alt="profilePic" class="profilePic"
                     id="profilePic">
+                    
                 <section id="name"></section>
                 <section id="email"></section>
                 <section id="interests"></section>
                 <section id="education"></section>
                 <section id="careerGoals"></section>
             </section>
+        </section> -->
+
+        <section class="card-panel custom-card-profile">
+            <section id="user">
+                <h1 id="user-profile"></h1>
+                <img src="./assets/images/pexels-cottonbro-studio-6626882.jpg" alt="profilePic" class="profilePic" id="profilePic">
+                <div class="profile-info">
+                    <section id="user-profile"></section>
+                    <section id="name"></section>
+                    <section id="email"></section>
+                    <section id="interests"></section>
+                    <section id="education"></section>
+                    <section id="careerGoals"></section>
+                </div>
+            </section>
         </section>
+        
     </div>
     <!--Icon Bar-->
     <footer>
