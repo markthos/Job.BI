@@ -73,42 +73,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     // Update Profile form submit event
-    updateForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-  
-      retrievedUser.name = nameInput.value;
-      retrievedUser.email = emailInput.value;
-      retrievedUser.interests = interestsInput.value.split(',');
-      retrievedUser.education = educationInput.value.split(',');
-      retrievedUser.careerGoals = careerGoalsInput.value.split(',');
+// Update Profile form submit event
+var updateForm = document.getElementById('updateForm');
+updateForm.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-      var profilePicInput = document.getElementById('profilePicInput');
-      var selectedFile = profilePicInput.files[0];
-      // if loop to check if a file was selected by the user
-      if (selectedFile) {
-        var reader = new FileReader();
+  var retrievedUser = JSON.parse(localStorage.getItem('user'));
+  var nameInput = document.getElementById('nameInput');
+  var emailInput = document.getElementById('emailInput');
+  var interestsInput = document.getElementById('interestsInput');
+  var educationInput = document.getElementById('educationInput');
+  var careerGoalsInput = document.getElementById('careerGoalsInput');
 
-        reader.onload = function(event) {
-          // Convert the file to a data URL
-          var dataURL = event.target.result;
-          // Save the profile picture in local storage
-          localStorage.setItem('profilePic', dataURL);
+  // Retrieve existing user data and update with new inputs if they exist
+  var updatedUser = {
+    name: nameInput.value.trim() !== '' ? nameInput.value : retrievedUser.name,
+    email: emailInput.value.trim() !== '' ? emailInput.value : retrievedUser.email,
+    interests: interestsInput.value.trim() !== '' ? interestsInput.value.split(',') : retrievedUser.interests,
+    education: educationInput.value.trim() !== '' ? educationInput.value.split(',') : retrievedUser.education,
+    careerGoals: careerGoalsInput.value.trim() !== '' ? careerGoalsInput.value.split(',') : retrievedUser.careerGoals
+  };
 
-          // Update the profile picture source in the HTML
-          profilePicElement.src = dataURL;
-          
-        };
+  var profilePicInput = document.getElementById('profilePicInput');
+  var selectedFile = profilePicInput.files[0];
 
-        // Read the selected file as a Data URL
-        reader.readAsDataURL(selectedFile);
-      }
-      // Store the updated user object in local storage
-      localStorage.setItem('user', JSON.stringify(retrievedUser));
-      
-      displayUser(retrievedUser);
-      updateFormContainer.style.display = 'none';
-    });
-  });
+  // Check if a file was selected by the user
+  if (selectedFile) {
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      // Convert the file to a data URL
+      var dataURL = event.target.result;
+      // Save the profile picture in local storage
+      localStorage.setItem('profilePic', dataURL);
+
+      // Update the profile picture source in the HTML
+      profilePicElement.src = dataURL;
+    };
+
+    // Read the selected file as a Data URL
+    reader.readAsDataURL(selectedFile);
+  }
+
+  // Update the user object in local storage
+  localStorage.setItem('user', JSON.stringify(updatedUser));
+
+  // Update the displayed user data
+  displayUser(updatedUser);
+
+  var updateFormContainer = document.getElementById('updateFormContainer');
+  updateFormContainer.style.display = 'none';
+});
+
+});
   
     // Skip button event listener
     skipBtn.addEventListener('click', function() {
