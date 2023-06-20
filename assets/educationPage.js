@@ -7,93 +7,80 @@ var clientSecret = "kQWwD5wx2QVmc6WaGfma0T2tan3FISTSi3xu0F2N7vGPiZBjImTdx1u43UIH
 // Authenticate and get the bearer token
 var token = btoa(clientId + ":" + clientSecret);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const loginLink = document.getElementById("login");
-  const signupLink = document.getElementById("signup");
-  const loginForm = document.querySelector(".form-box.login");
-  const signupForm =  document.querySelector(".form-box.signup");
+document.addEventListener("DOMContentLoaded", function () {
+  var loginLink = document.getElementById("login");
+  var signupLink = document.getElementById("signup");
+  var loginForm = document.querySelector(".form-box.login");
+  var signupForm = document.querySelector(".form-box.signup");
 
   loginForm.style.display = "none";
-  signupForm.style.display = "none"; 
+  signupForm.style.display = "none";
 
-  loginLink.addEventListener("click", function(event) {
+  loginLink.addEventListener("click", function (event) {
     event.preventDefault();
     loginForm.style.display = "block";
     signupForm.style.display = "none";
   });
 
-  signupLink.addEventListener("click", function(event) {
+  signupLink.addEventListener("click", function (event) {
     event.preventDefault();
     loginForm.style.display = "none";
     signupForm.style.display = "block";
   });
 
-  document.getElementById("loginBtn").addEventListener("click", function(event) {
+  function auth() {
+    var usernameInput = document.getElementById("username");
+    var passwordInput = document.getElementById("password");
+
+    var username = usernameInput.value.trim();
+    var password = passwordInput.value.trim();
+
+    // Retrieve user data from local storage
+    var user = JSON.parse(localStorage.getItem("user"));
+
+    if (user && user.username === username && user.password === password) {
+      // Redirect the user to the profile page
+      window.location.href = "profilePage.html";
+    } else {
+      console.log("Invalid username or password. Please try again.");
+    }
+  }
+
+  document.getElementById("loginBtn").addEventListener("click", function (event) {
     event.preventDefault();
-    window.location.href = "./profilePage.html";
+    auth(); // Call the auth function for login authentication
   });
 
-  document.getElementById("signupBtn").addEventListener("click", function(event) {
+  document.getElementById("signupBtn").addEventListener("click", function (event) {
     event.preventDefault();
-    window.location.href = "./profilePage.html";
+
+    // Perform signup validation and other necessary checks here
+
+    var usernameInput = document.getElementById("usernameInput");
+    var emailInput = document.getElementById("emailInput");
+    var passwordInput = document.getElementById("passwordInput");
+
+    var username = usernameInput.value.trim();
+    var email = emailInput.value.trim();
+    var password = passwordInput.value.trim();
+
+    var user = {
+      username: username,
+      email: email,
+      password: password,
+    };
+
+    // Encode the user object as a query parameter in the URL
+    var queryString = "?user=" + encodeURIComponent(JSON.stringify(user));
+
+    // Redirect the user to the profile page with the query parameter
+    window.location.href = "http://127.0.0.1:5500/profilePage.html" + queryString;
+
+    // Clear the form fields on clicking the signup button
+    usernameInput.value = "";
+    emailInput.value = "";
+    passwordInput.value = "";
   });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const loginLink = document.getElementById("login");
-  const signupLink = document.getElementById("signup");
-  const loginForm = document.querySelector(".form-box.login");
-  const signupForm =  document.querySelector(".form-box.signup");
-
- loginForm.style.display = "none";
-  signupForm.style.display = "none"; 
-
-
-loginLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "block";
-  signupForm.style.display = "none";
-});
-
-signupLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  loginForm.style.display = "none";
-  signupForm.style.display = "block";
-});
-
-
-// Add an event listener to the login button
-document.getElementById("loginBtn").addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Perform login validation and other necessary checks here
-  // If login is successful, redirect the user to the profile page
-  window.location.href = "./profilePage.html";
-});
-
-// Add an event listener to the login button
-document.getElementById("signupBtn").addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Perform login validation and other necessary checks here
-  // If login is successful, redirect the user to the profile page
-  window.location.href = "./profilePage.html";
-});
-
-
-//  loginForm.addEventListener("click", function(event) {
-//       event.preventDefault();
-//       loginForm.style.display = "none";
-//       signupForm.style.display = "block";
-
-//     });
-
-//   signupForm.addEventListener("click", function(event) {
-//       event.preventDefault();
-//       loginForm.style.display = "block";
-//       signupForm.style.display = "none";
-//   });
-
 });
 
 //"Search courses" event listeners for "Search" button and "Enter" keyboard key. 
