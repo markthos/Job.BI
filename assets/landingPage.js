@@ -19,8 +19,8 @@ function getQuotesList(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var loginLink = document.getElementById("login");
-  var signupLink = document.getElementById("signup");
+  var loginLink = document.getElementById("login-career");
+  var signupLink = document.getElementById("signup-career");
   var loginForm = document.querySelector(".form-box.login");
   var signupForm = document.querySelector(".form-box.signup");
 
