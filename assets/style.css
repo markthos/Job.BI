@@ -374,11 +374,11 @@ footer {
   background-color: #19645d;
   color: rgb(254, 253, 253);
   border-radius: 10px;
-  width: 60%;
+  width: 80%;
   position: relative;
   z-index: 1;
   margin-top: 10%;
-  margin-right: 20%;
+  margin-left: 10%;
   border: white solid;
   display: flex;
   justify-content: center;
