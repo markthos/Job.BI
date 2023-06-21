@@ -64,13 +64,13 @@ The career page enables users to search for job postings based on their desired 
 
 ### Screenshots
 
-![Landing Page](https://github.com/markthos/Job.BI/blob/main/screenshots/landing_page.png)
+![Landing Page](assets/images/landing-screen.png)
 
-![Profile Page](https://github.com/markthos/Job.BI/blob/main/screenshots/profile_page.png)
+![Profile Page](assets/images/profile-screen.png)
 
-![Education Page](https://github.com/markthos/Job.BI/blob/main/screenshots/education_page.png)
+![Education Page](assets/images/education-screen.png)
 
-![Career Page](https://github.com/markthos/Job.BI/blob/main/screenshots/career_page.png)
+![Career Page](assets/images/career-screen.png)
 
 ### Deployment
 
