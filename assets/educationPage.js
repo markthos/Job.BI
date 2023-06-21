@@ -133,7 +133,7 @@ var searchInput = document.getElementById("search-input");
 // Helper function to make authenticated API calls
 
 function makeApiCall(searchInput) {
-  var apiUrl = `https://www.udemy.com/api-2.0/courses/?search=${searchInput}`;
+  var apiUrl = `https://www.udemy.com/api-2.0/courses/?search=${searchInput}&page_size=30`;
     fetch(apiUrl, {
         headers: {
             "Authorization": "Basic " + token
