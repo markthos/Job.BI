@@ -221,12 +221,3 @@ function searchCourses() {
   displayCourses(filteredCourses); // Display the filtered courses
 }
 
-
-
-
-
-
-//This is commented out from line 30, 31. Keep for now
-
-/* <p>${course.location}</p>
-   <a href= "${course.applyLink}">Apply Now</a>  */

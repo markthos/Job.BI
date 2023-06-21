@@ -7,6 +7,10 @@ body {
   background-color: #162822;
 }
 
+a {
+  z-index: ;
+}
+
 .logo {
   width: 35%;
   height: auto;
@@ -14,7 +18,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 10;
 }
 
 .btn {
@@ -338,16 +342,17 @@ footer {
 
 .profilePic {
   border-radius: 50%;
-  width: 80%;
-  height: 80%;
-  margin: 10%;
+  width: 50%;
+  height: 50%;
+  margin: 25%;
   margin-bottom: 20%;
   margin-top: 0%;
 }
 
 
 .profile-info section {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 #user {
@@ -374,11 +379,10 @@ footer {
   background-color: #19645d;
   color: rgb(254, 253, 253);
   border-radius: 10px;
-  width: 80%;
+  width: 40%;
   position: relative;
-  z-index: 1;
-  margin-top: 10%;
-  margin-left: 10%;
+  margin-top: 20%;
+  margin: 30%;
   border: white solid;
   display: flex;
   justify-content: center;
