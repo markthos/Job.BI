@@ -228,37 +228,37 @@ function searchCareers() {
 
 //fetch jobs from LinkedIn API through RapidAPI
 function fetchJobs() {
-  // var url = 'https://linkedin-jobs-search.p.rapidapi.com/';
-  // var options = {
-  //     method: 'POST',
-  //     headers: {
-  //         'content-type': 'application/json',
-  //         'X-RapidAPI-Key': '031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2',
-  //         'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
-  //     },
-  //     body: JSON.stringify({
-  //         search_terms: 'python programmer',
-  //         location: 'Chicago, IL',
-  //         page: '1'
-  //     })
-  // };
+  var url = 'https://linkedin-jobs-search.p.rapidapi.com/';
+  var options = {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json',
+          'X-RapidAPI-Key': '031a423e1fmshdd10a01c4041f67p12aa2fjsn9ca9aaab01a2',
+          'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
+      },
+      body: JSON.stringify({
+          search_terms: 'python programmer',
+          location: 'Chicago, IL',
+          page: '1'
+      })
+  };
 
-  // fetch(url, options)
-  //     .then(response => {
-  //         if (!response.ok) {
-  //             throw new Error('Network response was not ok');
-  //         }
-  //         return response.json();
-  //     })
-  //     .then(result => {
-  //         console.log(result);
-  //         // Call displayCareers function with received data
-  //         displayCareers(result); // Assuming that result is an array of job objects
-  //     })
-  //     .catch(error => {
-  //         console.error('There has been a problem with your fetch operation:', error);
-  //     });
-  displayCareers(response);
+  fetch(url, options)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(result => {
+          console.log(result);
+          // Call displayCareers function with received data
+          displayCareers(result); // Assuming that result is an array of job objects
+      })
+      .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+      });
+//   displayCareers(response);
 }
 
 // Call fetchJobs function when page loads
