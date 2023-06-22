@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var queryString = "?user=" + encodeURIComponent(JSON.stringify(user));
 
     // Redirect the user to the profile page with the query parameter
-    window.location.href = "http://127.0.0.1:5500/profilePage.html" + queryString;
+    window.location.href = "./profilePage.html" + queryString;
 
     // Clear the form fields on clicking the signup button
     usernameInput.value = "";
